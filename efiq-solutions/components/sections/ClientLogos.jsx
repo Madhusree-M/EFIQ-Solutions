@@ -17,7 +17,7 @@ export default function ClientLogos() {
         <section className="py-12 bg-[#080808] border-y border-white/5 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 <p className="text-center text-white/30 text-xs uppercase tracking-widest mb-8">
-                    Trusted by leading organizations worldwide
+                    Trusted By Industry Leaders
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
                     {logos.map((logo, i) => (
