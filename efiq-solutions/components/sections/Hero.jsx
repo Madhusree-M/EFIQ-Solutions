@@ -86,61 +86,35 @@ export default function Hero() {
             <div className="absolute top-0 left-0 w-[600px] h-[400px] bg-[#0A84FF]/5 rounded-full blur-[120px]" />
 
             {/* Content */}
-            <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0A84FF]/30 bg-[#0A84FF]/10 text-[#0A84FF] text-xs tracking-widest uppercase mb-8"
-                >
-                    <span className="w-1.5 h-1.5 bg-[#22C55E] rounded-full animate-pulse" />
-                    Advanced Engineering Solutions
-                </motion.div>
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex justify-start">
+                <div className="max-w-2xl text-left">
 
-                <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight text-white mb-6"
-                    style={{ fontFamily: "'Orbitron', sans-serif" }}
-                >
-                    ENGINEERING SYSTEMS
-                    <br />
-                    <span className="text-[#0A84FF]">THAT HAVE YOU</span>
-                    <br />
-                    COVERED
-                </motion.h1>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
-                >
-                    EFIQ Solutions delivers advanced radar, sensing, and AI-enabled
-                    platforms engineered for defense, aviation, maritime, and industrial
-                    applications worldwide.
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="flex flex-col sm:flex-row gap-4 justify-center"
-                >
-                    <a
-                        href="#markets"
-                        className="px-8 py-3.5 bg-[#22C55E] hover:bg-[#16a34a] text-black font-bold rounded-md transition-all duration-200 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.4)] text-sm tracking-wide"
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="text-4xl md:text-5xl lg:text-5xl font-medium leading-tight tracking-wider text-white mb-6"
+                        style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
-                        Learn More
-                    </a>
-                    <a
-                        href="#products"
-                        className="px-8 py-3.5 border border-white/20 text-white hover:border-[#0A84FF] hover:text-[#0A84FF] font-semibold rounded-md transition-all duration-200 text-sm tracking-wide"
+                        Innovative Technology.
+                        <br />
+                        Tangible Results.
+                        <br />
+                        Real Impact.
+                    </motion.h1>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="text-white/60 text-lg md:text-xl leading-relaxed mb-10"
                     >
-                        View Products
-                    </a>
-                </motion.div>
+                        Empowering the future through cutting-edge solutions and transparent innovation
+                    </motion.p>
+
+
+                </div>
             </div>
 
             {/* Bottom fade */}
