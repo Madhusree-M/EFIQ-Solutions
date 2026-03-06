@@ -34,7 +34,7 @@ export default function Navbar() {
         >
 
             <div className="flex justify-between items-center gap-8 w-full">
-                <div className="w-full px-20 py-3 flex items-center justify-between">
+                <div className="w-full px-20 flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
                         <img src="/assets/logo.png" alt="Logo" className="w-20 h-20 object-contain" />

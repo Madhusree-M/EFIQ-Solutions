@@ -1,59 +1,6 @@
 "use client";
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-
-// Animated radar pulse dot component
-function RadarDot({ x, y, delay = 0 }) {
-    return (
-        <motion.div
-            className="absolute"
-            style={{ left: `${x}%`, top: `${y}%` }}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: [0, 1, 0], scale: [0, 1, 0] }}
-            transition={{ duration: 2.5, repeat: Infinity, delay, ease: "easeOut" }}
-        >
-            <div className="relative">
-                <div className="w-2 h-2 bg-[#0A84FF] rounded-full" />
-                <motion.div
-                    className="absolute inset-0 rounded-full border border-[#0A84FF]"
-                    animate={{ scale: [1, 3], opacity: [0.8, 0] }}
-                    transition={{ duration: 2.5, repeat: Infinity, delay, ease: "easeOut" }}
-                />
-            </div>
-        </motion.div>
-    );
-}
-
-// Radar sweep animation
-function RadarSweep() {
-    return (
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="relative w-[500px] h-[500px] opacity-10">
-                <div className="absolute inset-0 rounded-full border border-[#0A84FF]/40" />
-                <div className="absolute inset-[20%] rounded-full border border-[#0A84FF]/30" />
-                <div className="absolute inset-[40%] rounded-full border border-[#0A84FF]/20" />
-                <motion.div
-                    className="absolute top-1/2 left-1/2 w-1/2 h-[1px]"
-                    style={{
-                        background: "linear-gradient(90deg, transparent, #0A84FF)",
-                        transformOrigin: "0 50%",
-                    }}
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                />
-            </div>
-        </div>
-    );
-}
-
-const radarDots = [
-    { x: 20, y: 30, delay: 0 },
-    { x: 65, y: 25, delay: 0.8 },
-    { x: 45, y: 55, delay: 1.5 },
-    { x: 78, y: 60, delay: 0.3 },
-    { x: 30, y: 70, delay: 1.1 },
-    { x: 55, y: 40, delay: 0.6 },
-];
+import Starfield from "../Starfield";
 
 export default function Hero() {
     return (
@@ -61,45 +8,30 @@ export default function Hero() {
             id="home"
             className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
         >
-            {/* Background grid */}
-            <div
-                className="absolute inset-0 opacity-5"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(#0A84FF 1px, transparent 1px), linear-gradient(90deg, #0A84FF 1px, transparent 1px)",
-                    backgroundSize: "60px 60px",
-                }}
-            />
+            {/* Interstellar Animated Background */}
+            <Starfield />
 
-            {/* Radial dark gradient overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_black_80%)]" />
+            {/* Radial dark gradient overlay to ensure text readability */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_10%,_black_90%)] z-0" />
 
-            {/* Radar sweep */}
-            <RadarSweep />
-
-            {/* Radar dots */}
-            {radarDots.map((dot, i) => (
-                <RadarDot key={i} {...dot} />
-            ))}
-
-            {/* Blue glow top-left accent */}
-            <div className="absolute top-0 left-0 w-[600px] h-[400px] bg-[#0A84FF]/5 rounded-full blur-[120px]" />
+            {/* Subtle Blue glow top-left accent */}
+            <div className="absolute top-0 left-0 w-[600px] h-[400px] bg-[#0A84FF]/10 rounded-full blur-[150px] z-0 pointer-events-none" />
 
             {/* Content */}
             <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex justify-start">
-                <div className="max-w-2xl text-left">
-
-
+                <div className="w-full text-left mt-20 md:mt-0">
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-4xl md:text-5xl lg:text-5xl font-medium leading-tight tracking-wider text-white mb-6"
+                        transition={{ duration: 1, delay: 0.2 }}
+                        className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-wider text-white mb-6 drop-shadow-lg"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         Innovative Technology.
                         <br />
-                        Tangible Results.
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#0A84FF]">
+                            Tangible Results.
+                        </span>
                         <br />
                         Real Impact.
                     </motion.h1>
@@ -107,18 +39,26 @@ export default function Hero() {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-white/60 text-lg md:text-xl leading-relaxed mb-10"
+                        transition={{ duration: 1, delay: 0.5 }}
+                        className="text-white/70 text-lg md:text-2xl leading-relaxed mb-10 font-light tracking-wide max-w-xl"
                     >
                         Empowering the future through cutting-edge solutions and transparent innovation
                     </motion.p>
 
-
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.8 }}
+                    >
+                        <a href="#products" className="inline-block px-8 py-4 bg-[#0A84FF] text-white font-bold rounded-full hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(10,132,255,0.4)] hover:shadow-[0_0_30px_rgba(10,132,255,0.6)] transform hover:-translate-y-1">
+                            Explore Solutions
+                        </a>
+                    </motion.div>
                 </div>
             </div>
 
             {/* Bottom fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
         </section>
     );
 }
