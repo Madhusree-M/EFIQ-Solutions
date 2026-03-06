@@ -55,16 +55,26 @@ const InteractiveText = ({ text }) => {
             viewport={{ once: true, margin: "-50px" }}
             className="inline-block"
         >
-            {text.split("").map((char, i) => (
-                <motion.span
-                    key={i}
-                    variants={childVariants}
-                    className="font-light text-white/90"
-                    style={{ display: char === " " ? "inline" : "inline-block" }}
-                >
-                    {char}
-                </motion.span>
-            ))}
+            {text.split(/(\s+)/).map((segment, segmentIdx) => {
+                const isSpace = /\s+/.test(segment);
+
+                return (
+                    <span
+                        key={segmentIdx}
+                        className={isSpace ? "inline" : "inline-block whitespace-nowrap"}
+                    >
+                        {segment.split("").map((char, charIdx) => (
+                            <motion.span
+                                key={charIdx}
+                                variants={childVariants}
+                                className={`font-light text-white/90 ${isSpace ? 'inline' : 'inline-block'}`}
+                            >
+                                {char}
+                            </motion.span>
+                        ))}
+                    </span>
+                );
+            })}
         </motion.span>
     );
 };
@@ -83,7 +93,7 @@ export default function Markets() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-3xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider mb-6"
+                        className="text-3xl md:text-5xl lg:text-7xl font-black text-white uppercase tracking-wider mb-6"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         Market We Serve
@@ -116,7 +126,7 @@ export default function Markets() {
 
                                     {/* Title Wrapper */}
                                     <div className="pt-8 pl-8 pr-4 h-full">
-                                        <h3 className={`text-sm lg:text-base font-bold uppercase tracking-widest transition-colors duration-300 ${isActive ? "text-white" : "text-white/40 group-hover:text-white/80"}`}
+                                        <h3 className={`text-sm lg:text-base font-bold uppercase tracking-widest transition-colors duration-300 ${isActive ? "text-white" : "text-white/60 group-hover:text-white/80"}`}
                                             style={{ fontFamily: "'Orbitron', sans-serif" }}
                                         >
                                             {market.title}
@@ -157,7 +167,7 @@ export default function Markets() {
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <p className="text-xl lg:text-3xl text-white/90 leading-relaxed font-light text-justify">
+                                    <p className="text-xl lg:text-3xl text-white/90 leading-relaxed font-light">
                                         <InteractiveText text={markets[activeIdx].desc} />
                                     </p>
                                 </motion.div>
@@ -192,7 +202,7 @@ export default function Markets() {
                                                 <div className="absolute inset-0 rounded-full border-[1.5px] border-white/30 group-hover:border-white/60 transition-colors duration-300" />
                                             )}
                                         </div>
-                                        <h3 className={`text-sm font-bold uppercase tracking-widest pl-8 transition-colors duration-300 ${isActive ? "text-white" : "text-white/40 group-hover:text-white/80"}`}
+                                        <h3 className={`text-sm font-bold uppercase tracking-widest pl-8 transition-colors duration-300 ${isActive ? "text-white" : "text-white/60 group-hover:text-white/80"}`}
                                             style={{ fontFamily: "'Orbitron', sans-serif" }}
                                         >
                                             {market.title}
@@ -209,7 +219,7 @@ export default function Markets() {
                                             >
                                                 <div className="ml-[5.5px] pl-8 pb-6 pt-2 h-full border-l border-[#0A84FF]/60 bg-[#050505]">
                                                     <p className="text-white/80 text-base leading-relaxed text-justify">
-                                                        "<InteractiveText text={market.desc} />"
+                                                        <InteractiveText text={market.desc} />
                                                     </p>
                                                 </div>
                                             </motion.div>

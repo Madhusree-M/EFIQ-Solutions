@@ -1,62 +1,117 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
+const InteractiveText = ({ text }) => {
+    const [hoveredIdx, setHoveredIdx] = useState(null);
+
+    let absoluteIdx = 0;
+
+    return (
+        <span onMouseLeave={() => setHoveredIdx(null)}>
+            {text.split(/(\s+)/).map((segment, segmentIdx) => {
+                const isSpace = /\s+/.test(segment);
+
+                return (
+                    <span
+                        key={segmentIdx}
+                        className={isSpace ? "inline" : "inline-block whitespace-nowrap"}
+                    >
+                        {segment.split("").map((char) => {
+                            const i = absoluteIdx++;
+                            const distance = hoveredIdx !== null ? Math.abs(hoveredIdx - i) : Infinity;
+                            const isHovered = distance <= 2; // Covers 5 letters
+
+                            let textColor = "text-inherit";
+                            let dropShadow = "";
+                            let fontWeight = "font-light";
+
+                            if (isHovered && !isSpace) {
+                                textColor = "text-[var(--brand-blue)]";
+                                if (distance === 0) {
+                                    dropShadow = "drop-shadow-[0_0_12px_var(--brand-blue)]";
+                                    fontWeight = "font-medium";
+                                }
+                                else if (distance === 1) {
+                                    dropShadow = "drop-shadow-[0_0_8px_var(--brand-blue)]";
+                                    fontWeight = "font-normal";
+                                }
+                                else if (distance === 2) {
+                                    dropShadow = "drop-shadow-[0_0_4px_var(--brand-blue)]";
+                                }
+                            }
+
+                            return (
+                                <span
+                                    key={i}
+                                    onMouseEnter={() => setHoveredIdx(i)}
+                                    className={`transition-colors duration-150 ease-out ${textColor} ${fontWeight} ${dropShadow} ${isSpace ? 'inline' : 'inline-block'}`}
+                                >
+                                    {char}
+                                </span>
+                            );
+                        })}
+                    </span>
+                );
+            })}
+        </span>
+    );
+};
 
 export default function Mission() {
     return (
         <section
             id="about"
-            className="py-28 bg-black relative overflow-hidden"
+            className="py-24 bg-[#050505] relative overflow-hidden"
         >
-            {/* Subtle glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,_rgba(10,132,255,0.05),_transparent)]" />
+            <div className="relative max-w-6xl mx-auto px-6">
 
-            <div className="relative max-w-4xl mx-auto px-6 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0A84FF]/20 bg-[#0A84FF]/5 text-[#0A84FF] text-xs tracking-widest uppercase mb-8"
-                >
-                    Our Mission
-                </motion.div>
+                {/* Top Section */}
+                <div className="text-center mb-16 md:mb-24">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7 }}
+                        className="text-3xl md:text-5xl font-bold leading-tight text-white uppercase tracking-wide"
+                    >
+                        DRIVEN BY CURIOSITY.<br />
+                        POWERED BY ENGINEERING.
+                    </motion.h2>
+                </div>
 
-                <motion.h2
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, delay: 0.1 }}
-                    className="text-3xl md:text-5xl font-black leading-tight text-white mb-8"
-                    style={{ fontFamily: "'Orbitron', sans-serif" }}
-                >
-                    DRIVEN BY CURIOSITY.
-                    <br />
-                    <span className="text-[#0A84FF]">POWERED BY ENGINEERING.</span>
-                </motion.h2>
+                {/* Bottom Section: Two Columns */}
+                <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24 max-w-5xl mx-auto">
+                    {/* Left side: Logo */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                        className="w-full md:w-5/12 flex justify-center md:justify-end"
+                    >
+                        <img
+                            src="/assets/logo.png"
+                            alt="EFIQ Solutions Logo"
+                            className="w-64 md:w-full max-w-[320px] object-contain"
+                        />
+                    </motion.div>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, delay: 0.2 }}
-                    className="text-white/60 text-lg leading-relaxed"
-                >
-                    EFIQ Solutions develops advanced engineering systems, intelligent
-                    software platforms, and innovative technology products designed to
-                    solve complex real-world challenges. Our expertise spans radar systems,
-                    sensing technologies, advanced software development, and AI-enabled
-                    platforms — empowering organizations across defense, aviation,
-                    maritime, and industrial sectors to operate with confidence and
-                    precision.
-                </motion.p>
+                    {/* Right side: Text */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, delay: 0.4 }}
+                        className="w-full md:w-7/12"
+                    >
+                        <p className="text-white text-xl md:text-2xl leading-relaxed text-justify font-light">
+                            <InteractiveText text="EFIQ Solutions develops advanced engineering systems, intelligent software platforms, and innovative technology products designed to solve complex real-world challenges. From concept and prototyping to development and deployment, we focus on creating technology that delivers practical impact, drives innovation, and improves operational efficiency for organizations across multiple industries." />
+                        </p>
+                    </motion.div>
+                </div>
 
-                <motion.div
-                    initial={{ opacity: 0, scaleX: 0 }}
-                    whileInView={{ opacity: 1, scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="w-20 h-0.5 bg-gradient-to-r from-[#0A84FF] to-[#22C55E] mx-auto mt-10"
-                />
             </div>
         </section>
     );
