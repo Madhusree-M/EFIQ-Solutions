@@ -34,18 +34,10 @@ export default function Navbar() {
         >
 
             <div className="flex justify-between items-center gap-8 w-full">
-                <div className="w-full px-20 py-4 flex items-center justify-between">
+                <div className="w-full px-20 py-3 flex items-center justify-between">
                     {/* Logo */}
-                    <Link href="#home" className="flex items-center gap-2 group">
-                        <div className="w-8 h-8 rounded-full border-2 border-[#0A84FF] flex items-center justify-center">
-                            <div className="w-3 h-3 bg-[#0A84FF] rounded-full" />
-                        </div>
-                        <span
-                            className="text-xl font-bold tracking-widest text-white"
-                            style={{ fontFamily: "'Orbitron', sans-serif" }}
-                        >
-                            EFIQ
-                        </span>
+                    <Link href="/" className="flex items-center gap-2 group">
+                        <img src="/assets/logo.png" alt="Logo" className="w-20 h-20 object-contain" />
                     </Link>
 
                     <div className="flex items-center gap-8">
