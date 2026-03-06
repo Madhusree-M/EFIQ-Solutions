@@ -1,133 +1,85 @@
 "use client";
-import { motion } from "framer-motion";
-import { FiTwitter, FiLinkedin, FiFacebook, FiYoutube } from "react-icons/fi";
 import Link from "next/link";
+import Image from "next/image";
 
-const companyLinks = ["About", "Careers", "Blog", "Press", "Partners"];
-const productLinks = ["Radar Systems", "Platforms", "Technology", "Software"];
+const StarburstIcon = () => (
+    <div className="relative w-7 h-7 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+        <div className="absolute w-[22px] h-[22px] bg-[#E87A00] rounded-[1px]" />
+        <div className="absolute w-[22px] h-[22px] bg-[#E87A00] rotate-[30deg] rounded-[1px]" />
+        <div className="absolute w-[22px] h-[22px] bg-[#E87A00] rotate-[60deg] rounded-[1px]" />
+        <div className="absolute w-[15px] h-[15px] bg-white rounded-full z-10 flex items-center justify-center drop-shadow-sm">
+            <div className="w-1.5 h-1.5 bg-[#22C55E] rounded-full" />
+        </div>
+    </div>
+);
 
 export default function Footer() {
     return (
-        <footer className="bg-[#080808] border-t border-white/5 pt-16 pb-8">
+        <footer className="bg-black pt-20 pb-10">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-                    {/* Logo + Description */}
-                    <div className="md:col-span-1">
-                        <div className="flex items-center gap-2 mb-4">
-                            <div className="w-7 h-7 rounded-full border-2 border-[#0A84FF] flex items-center justify-center">
-                                <div className="w-2.5 h-2.5 bg-[#0A84FF] rounded-full" />
+
+                {/* Top Section */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-16">
+
+                    {/* Left: Logo and Tagline */}
+                    <div className="md:col-span-5 lg:col-span-6 flex flex-col items-start justify-center">
+                        <img
+                            src="/assets/logo.png"
+                            alt="EFIQ Solutions"
+                            className="w-56 md:w-64 mb-6 object-contain"
+                        />
+                        <p className="text-white text-md font-medium tracking-wide">
+                            Your Tech and Digital Partner
+                        </p>
+                    </div>
+
+                    {/* Middle: Other Links */}
+                    <div className="md:col-span-4 lg:col-span-3 flex flex-col items-start md:items-center justify-center">
+                        <div className="flex flex-col items-center">
+                            <h3 className="text-white text-base font-bold mb-6">Other Links</h3>
+                            <div className="flex items-center gap-6">
+                                <StarburstIcon />
+                                <StarburstIcon />
+                                <StarburstIcon />
                             </div>
-                            <span
-                                className="text-lg font-bold tracking-widest text-white"
-                                style={{ fontFamily: "'Orbitron', sans-serif" }}
-                            >
-                                EFIQ
-                            </span>
-                        </div>
-                        <p className="text-white/50 text-sm leading-relaxed">
-                            Advanced engineering systems and intelligent software platforms
-                            designed to solve complex real-world challenges.
-                        </p>
-                        <div className="flex gap-4 mt-6">
-                            {[FiTwitter, FiLinkedin, FiFacebook, FiYoutube].map((Icon, i) => (
-                                <Link
-                                    key={i}
-                                    href="#"
-                                    className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-[#0A84FF] hover:border-[#0A84FF] transition-all duration-200"
-                                >
-                                    <Icon size={16} />
-                                </Link>
-                            ))}
                         </div>
                     </div>
 
-                    {/* Company Links */}
-                    <div>
-                        <h3
-                            className="text-sm font-semibold text-white uppercase tracking-widest mb-5"
-                            style={{ fontFamily: "'Orbitron', sans-serif" }}
-                        >
-                            Company
-                        </h3>
-                        <ul className="space-y-3">
-                            {companyLinks.map((item) => (
-                                <li key={item}>
-                                    <Link
-                                        href="#"
-                                        className="text-white/50 text-sm hover:text-white transition-colors duration-200"
-                                    >
-                                        {item}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Product Links */}
-                    <div>
-                        <h3
-                            className="text-sm font-semibold text-white uppercase tracking-widest mb-5"
-                            style={{ fontFamily: "'Orbitron', sans-serif" }}
-                        >
-                            Products
-                        </h3>
-                        <ul className="space-y-3">
-                            {productLinks.map((item) => (
-                                <li key={item}>
-                                    <Link
-                                        href="#"
-                                        className="text-white/50 text-sm hover:text-white transition-colors duration-200"
-                                    >
-                                        {item}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Newsletter */}
-                    <div>
-                        <h3
-                            className="text-sm font-semibold text-white uppercase tracking-widest mb-5"
-                            style={{ fontFamily: "'Orbitron', sans-serif" }}
-                        >
-                            Stay Updated
-                        </h3>
-                        <p className="text-white/50 text-sm mb-4">
-                            Get the latest news and updates from EFIQ Solutions.
-                        </p>
-                        <div className="flex gap-2">
-                            <input
-                                type="email"
-                                placeholder="your@email.com"
-                                className="flex-1 bg-white/5 border border-white/10 rounded-md px-3 py-2 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#0A84FF]"
-                            />
-                            <button className="px-4 py-2 bg-[#22C55E] text-black text-sm font-semibold rounded-md hover:bg-[#16a34a] transition-colors">
-                                Subscribe
-                            </button>
+                    {/* Right: Company */}
+                    <div className="md:col-span-3 lg:col-span-3 flex flex-col items-start md:items-end justify-center">
+                        <div className="w-full flex flex-col items-start md:pl-8 lg:pl-16">
+                            <h3 className="text-white text-base font-bold mb-4">Company</h3>
+                            <ul className="space-y-2.5">
+                                {["About", "Contact", "Careers", "Newsletter"].map((link) => (
+                                    <li key={link}>
+                                        <Link href="#" className="text-white/90 text-sm hover:text-[#0A84FF] transition-colors font-medium">
+                                            {link}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
+
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-white/30 text-xs">
-                        © 2025 EFIQ Solutions. All rights reserved.
+                {/* Divider */}
+                <div className="w-full h-[1.5px] bg-white/70 mb-8" />
+
+                {/* Bottom Section */}
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <p className="text-white/80 text-xs md:text-sm font-medium tracking-wide">
+                        © 2026 EFIQ Solutions. All Rights Reserved
                     </p>
-                    <div className="flex gap-6">
-                        {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
-                            (item) => (
-                                <Link
-                                    key={item}
-                                    href="#"
-                                    className="text-white/30 text-xs hover:text-white/60 transition-colors"
-                                >
-                                    {item}
-                                </Link>
-                            )
-                        )}
+                    <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+                        {["Privacy Policy", "Terms and Conditions", "Cookies Settings"].map((item) => (
+                            <Link key={item} href="#" className="text-white/90 text-xs md:text-sm hover:text-[#0A84FF] transition-colors font-medium underline underline-offset-4 decoration-white/40 hover:decoration-[#0A84FF]">
+                                {item}
+                            </Link>
+                        ))}
                     </div>
                 </div>
+
             </div>
         </footer>
     );
