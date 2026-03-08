@@ -14,145 +14,172 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-24 bg-[#050505] relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_0%_50%,_rgba(10,132,255,0.04),_transparent)]" />
+        <section id="contact" className="py-24 bg-black relative overflow-hidden">
+            {/* Mesh Background Gradients */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#0A84FF]/10 blur-[120px] rounded-full animate-pulse" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#22C55E]/5 blur-[120px] rounded-full animate-pulse delay-700" />
+                <div className="absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-[#0A84FF]/5 blur-[100px] rounded-full" />
+            </div>
 
             <div className="relative max-w-7xl mx-auto px-6">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0A84FF]/20 bg-[#0A84FF]/5 text-[#0A84FF] text-xs tracking-widest uppercase mb-5"
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[#0A84FF] text-[10px] sm:text-xs tracking-[0.2em] uppercase mb-6 font-semibold"
                     >
-                        Contact Us
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#0A84FF] animate-ping" />
+                        Get in Touch
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-4xl font-black text-white"
+                        className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
-                        GET IN TOUCH WITH<br />
-                        <span className="text-[#0A84FF]">OUR EXPERTISE</span>
+                        DESIGNING THE<br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0A84FF] to-[#22C55E]">FUTURE OF SENSING</span>
                     </motion.h2>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-                    {/* Left info */}
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start">
+                    {/* Left Info Column */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="lg:col-span-2 space-y-8"
+                        transition={{ duration: 0.8 }}
+                        className="lg:col-span-2 space-y-12"
                     >
-                        <p className="text-white/50 text-sm leading-relaxed">
-                            Whether you have questions about our radar and sensing solutions, need
-                            a custom deployment, or want to explore partnership opportunities —
-                            our team of experts is ready to help.
-                        </p>
+                        <div>
+                            <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>Connectivity</h3>
+                            <p className="text-white/40 text-sm md:text-base leading-relaxed max-w-md">
+                                Our engineering team operates at the intersection of electromagnetic theory and modern AI. Reach out to discuss complex integrations or bespoke radar arrays.
+                            </p>
+                        </div>
 
-                        <div className="space-y-5">
+                        <div className="space-y-6">
                             {[
-                                { icon: FiMail, label: "Email", value: "info@efiqsolutions.com" },
-                                { icon: FiPhone, label: "Phone", value: "+1 (555) 000-0000" },
-                                { icon: FiMapPin, label: "Office", value: "123 Tech Boulevard, Innovation District, CA 90210" },
+                                { icon: FiMail, label: "Official Inquiry", value: "info@efiqsolutions.com", color: "#0A84FF" },
+                                { icon: FiPhone, label: "Direct Support", value: "+1 (555) 000-0000", color: "#22C55E" },
+                                { icon: FiMapPin, label: "Hub Location", value: "Innovation District, Silicon Valley, CA", color: "#0A84FF" },
                             ].map((item, i) => (
-                                <div key={i} className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-[#0A84FF]/10 border border-[#0A84FF]/20 flex items-center justify-center shrink-0 mt-0.5">
-                                        <item.icon size={16} className="text-[#0A84FF]" />
+                                <motion.div
+                                    key={i}
+                                    whileHover={{ x: 5 }}
+                                    className="flex items-start gap-5 group"
+                                >
+                                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#0A84FF]/40 transition-all duration-300">
+                                        <item.icon size={20} className="text-white group-hover:text-[#0A84FF] transition-colors" />
                                     </div>
-                                    <div>
-                                        <div className="text-white/40 text-xs mb-0.5">{item.label}</div>
-                                        <div className="text-white text-sm">{item.value}</div>
+                                    <div className="pt-1">
+                                        <div className="text-white/30 text-[10px] uppercase tracking-widest font-bold mb-1">{item.label}</div>
+                                        <div className="text-white font-medium group-hover:text-[#0A84FF] transition-colors">{item.value}</div>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </motion.div>
 
-                    {/* Right form */}
+                    {/* Right Form Column (Glassmorphism) */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.8 }}
                         className="lg:col-span-3"
                     >
-                        <div className="bg-[#0d0d0d] rounded-2xl border border-white/5 p-8">
-                            <h3
-                                className="text-white font-bold text-base mb-6 tracking-wide"
-                                style={{ fontFamily: "'Orbitron', sans-serif" }}
-                            >
-                                Get in Touch
-                            </h3>
+                        <div className="relative group">
+                            {/* Decorative Glow behind the form */}
+                            <div className="absolute -inset-1 bg-gradient-to-r from-[#0A84FF]/20 to-[#22C55E]/20 rounded-[2rem] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="text-white/40 text-xs mb-1.5 block">Name</label>
+                            <div className="relative bg-[#0d0d0d]/80 backdrop-blur-2xl rounded-[2rem] border border-white/10 p-8 md:p-12 shadow-2xl">
+                                <form onSubmit={handleSubmit} className="space-y-8">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div className="relative">
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                required
+                                                className="peer w-full bg-transparent border-b-2 border-white/10 py-2 text-white outline-none focus:border-[#0A84FF] transition-colors placeholder-transparent"
+                                                placeholder="Name"
+                                                value={form.name}
+                                                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                                            />
+                                            <label htmlFor="name" className="absolute left-0 -top-3.5 text-white/30 text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-[#0A84FF] peer-focus:text-xs">
+                                                Full Name
+                                            </label>
+                                        </div>
+                                        <div className="relative">
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                required
+                                                className="peer w-full bg-transparent border-b-2 border-white/10 py-2 text-white outline-none focus:border-[#0A84FF] transition-colors placeholder-transparent"
+                                                placeholder="Email"
+                                                value={form.email}
+                                                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                                            />
+                                            <label htmlFor="email" className="absolute left-0 -top-3.5 text-white/30 text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-[#0A84FF] peer-focus:text-xs">
+                                                Business Email
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div className="relative">
                                         <input
                                             type="text"
-                                            placeholder="Your Name"
-                                            required
-                                            value={form.name}
-                                            onChange={(e) => setForm({ ...form, name: e.target.value })}
-                                            className="w-full bg-white/5 border border-white/8 rounded-lg px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-[#0A84FF] transition-colors duration-200"
+                                            id="company"
+                                            className="peer w-full bg-transparent border-b-2 border-white/10 py-2 text-white outline-none focus:border-[#0A84FF] transition-colors placeholder-transparent"
+                                            placeholder="Company"
+                                            value={form.company}
+                                            onChange={(e) => setForm({ ...form, company: e.target.value })}
                                         />
+                                        <label htmlFor="company" className="absolute left-0 -top-3.5 text-white/30 text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-[#0A84FF] peer-focus:text-xs">
+                                            Company / Organization
+                                        </label>
                                     </div>
-                                    <div>
-                                        <label className="text-white/40 text-xs mb-1.5 block">Email</label>
-                                        <input
-                                            type="email"
-                                            placeholder="your@email.com"
+
+                                    <div className="relative">
+                                        <textarea
+                                            id="message"
+                                            rows={4}
                                             required
-                                            value={form.email}
-                                            onChange={(e) => setForm({ ...form, email: e.target.value })}
-                                            className="w-full bg-white/5 border border-white/8 rounded-lg px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-[#0A84FF] transition-colors duration-200"
+                                            className="peer w-full bg-transparent border-b-2 border-white/10 py-2 text-white outline-none focus:border-[#0A84FF] transition-colors placeholder-transparent resize-none"
+                                            placeholder="Message"
+                                            value={form.message}
+                                            onChange={(e) => setForm({ ...form, message: e.target.value })}
                                         />
+                                        <label htmlFor="message" className="absolute left-0 -top-3.5 text-white/30 text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-[#0A84FF] peer-focus:text-xs">
+                                            Your Project Details
+                                        </label>
                                     </div>
-                                </div>
-                                <div>
-                                    <label className="text-white/40 text-xs mb-1.5 block">Company</label>
-                                    <input
-                                        type="text"
-                                        placeholder="Your Company"
-                                        value={form.company}
-                                        onChange={(e) => setForm({ ...form, company: e.target.value })}
-                                        className="w-full bg-white/5 border border-white/8 rounded-lg px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-[#0A84FF] transition-colors duration-200"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="text-white/40 text-xs mb-1.5 block">Message</label>
-                                    <textarea
-                                        rows={5}
-                                        placeholder="Tell us about your project..."
-                                        required
-                                        value={form.message}
-                                        onChange={(e) => setForm({ ...form, message: e.target.value })}
-                                        className="w-full bg-white/5 border border-white/8 rounded-lg px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-[#0A84FF] transition-colors duration-200 resize-none"
-                                    />
-                                </div>
-                                <motion.button
-                                    type="submit"
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="w-full py-3.5 bg-[#22C55E] hover:bg-[#16a34a] text-black font-bold rounded-lg transition-all duration-200 flex items-center justify-center gap-2 text-sm hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]"
-                                >
-                                    {submitted ? (
-                                        "Message Sent! ✓"
-                                    ) : (
-                                        <>
-                                            <FiSend size={15} />
-                                            Send Message
-                                        </>
-                                    )}
-                                </motion.button>
-                            </form>
+
+                                    <motion.button
+                                        type="submit"
+                                        whileHover={{ scale: 1.01 }}
+                                        whileTap={{ scale: 0.99 }}
+                                        className="relative w-full overflow-hidden group/btn bg-white text-black font-black py-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300"
+                                    >
+                                        <div className="absolute inset-0 bg-[#0A84FF] translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300" />
+                                        <span className="relative z-10 group-hover/btn:text-white transition-colors flex items-center gap-2">
+                                            {submitted ? (
+                                                <>Mission Received ✓</>
+                                            ) : (
+                                                <>
+                                                    <FiSend size={18} />
+                                                    INITIATE CONTACT
+                                                </>
+                                            )}
+                                        </span>
+                                    </motion.button>
+                                </form>
+                            </div>
                         </div>
                     </motion.div>
                 </div>

@@ -45,7 +45,7 @@ export default function Stats() {
                             </div>
 
                             <div
-                                className="text-6xl md:text-7xl font-black text-white mb-6 tracking-tighter"
+                                className="text-6xl md:text-7xl font-black text-white mb-6 tracking-tighter hover:text-[#0A84FF] scale-105 transition-all duration-300 cursor-default"
                             >
                                 {stat.number}
                             </div>

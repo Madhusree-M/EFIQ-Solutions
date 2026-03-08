@@ -96,7 +96,7 @@ export default function Markets() {
                         className="text-3xl md:text-5xl lg:text-7xl font-black text-white uppercase tracking-wider mb-6"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
-                        Market We Serve
+                        Markets We Serve
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}

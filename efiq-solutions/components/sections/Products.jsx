@@ -51,14 +51,14 @@ export default function Products() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
-                            className="flex flex-col rounded-2xl overflow-hidden bg-[#1a1a1a]"
+                            className="group flex flex-col rounded-2xl overflow-hidden bg-[#1a1a1a]"
                         >
                             {/* Image Area */}
                             <div className="w-full aspect-square bg-[#333333] flex items-center justify-center p-8">
                                 <img
                                     src={product.imgSrc}
                                     alt={product.name}
-                                    className="w-full h-full object-contain opacity-80"
+                                    className="w-full h-full object-contain opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                                 />
                             </div>
 

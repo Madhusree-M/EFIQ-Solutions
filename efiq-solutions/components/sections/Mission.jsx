@@ -58,7 +58,7 @@ const InteractiveText = ({ text }) => {
         </span>
     );
 };
-
+// make the font to orbitron for the title
 export default function Mission() {
     return (
         <section
@@ -75,6 +75,7 @@ export default function Mission() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
                         className="text-3xl md:text-5xl font-bold leading-tight text-white uppercase tracking-wide"
+                        style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         DRIVEN BY CURIOSITY.<br />
                         POWERED BY ENGINEERING.

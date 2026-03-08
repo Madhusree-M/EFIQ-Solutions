@@ -1,4 +1,6 @@
 import "./globals.css";
+import AnimatedCursor from "@/components/AnimatedCursor";
+
 
 export const metadata = {
     title: "EFIQ Solutions | Advanced Engineering & Technology",
@@ -27,6 +29,9 @@ export const metadata = {
     },
 };
 
+import Loader from "@/components/Loader";
+import JellyfishCursor from "@/components/JellyfishCursor";
+
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className="scroll-smooth">
@@ -43,6 +48,8 @@ export default function RootLayout({ children }) {
                 />
             </head>
             <body className="bg-black text-white antialiased" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                <Loader />
+                <JellyfishCursor />
                 {children}
             </body>
         </html>

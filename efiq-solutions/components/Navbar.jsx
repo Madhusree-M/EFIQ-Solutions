@@ -33,45 +33,43 @@ export default function Navbar() {
                 }`}
         >
 
-            <div className="flex justify-between items-center gap-8 w-full">
-                <div className="w-full px-20 flex items-center justify-between">
-                    {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2 group">
-                        <img src="/assets/logo.png" alt="Logo" className="w-20 h-20 object-contain" />
-                    </Link>
+            <div className="flex justify-between items-center w-full px-6 md:px-12 lg:px-20 py-2">
+                {/* Logo */}
+                <Link href="/" className="flex items-center gap-2 group z-50">
+                    <img src="/assets/logo.png" alt="Logo" className="w-16 md:w-20 h-16 md:h-20 object-contain" />
+                </Link>
 
-                    <div className="flex items-center gap-8">
-                        <select className="bg-transparent border-none text-white">
-                            <option value="">Solutions</option>
-                            <option value="">Our Solutions</option>
-                        </select>
-                        <select className="bg-transparent border-none text-white">
-                            <option value="">Products</option>
-                            <option value="">Our Products</option>
-                        </select>
-                        <Link href="#insights" className="text-white hover:text-white transition-colors duration-200 tracking-wide">
-                            Insights
-                        </Link>
-                        <select className="bg-transparent border-none text-white">
-                            <option value="">Company</option>
-                            <option value="">Our Company</option>
-                        </select>
-                    </div>
-                    {/* CTA Button */}
-                    <div className="hidden md:block">
-                        <Link
-                            href="#contact"
-                            className="px-5 py-2 bg-[#22C55E] hover:bg-[#16a34a] text-black text-md font-bold rounded-md transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)]"
-                        >
-                            TALK TO EXPERT
-                        </Link>
-                    </div>
+                <div className="hidden lg:flex items-center gap-8">
+                    <select className="bg-transparent border-none text-white outline-none cursor-pointer">
+                        <option value="" className="bg-black">Solutions</option>
+                        <option value="" className="bg-black">Our Solutions</option>
+                    </select>
+                    <select className="bg-transparent border-none text-white outline-none cursor-pointer">
+                        <option value="" className="bg-black">Products</option>
+                        <option value="" className="bg-black">Our Products</option>
+                    </select>
+                    <Link href="#insights" className="text-white hover:text-white transition-colors duration-200 tracking-wide">
+                        Insights
+                    </Link>
+                    <select className="bg-transparent border-none text-white outline-none cursor-pointer">
+                        <option value="" className="bg-black">Company</option>
+                        <option value="" className="bg-black">Our Company</option>
+                    </select>
                 </div>
 
+                {/* CTA Button */}
+                <div className="hidden lg:block">
+                    <Link
+                        href="#contact"
+                        className="px-5 py-2 bg-[#22C55E] hover:bg-[#16a34a] text-black text-md font-bold rounded-md transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] whitespace-nowrap"
+                    >
+                        TALK TO EXPERT
+                    </Link>
+                </div>
 
                 {/* Mobile Hamburger */}
                 <button
-                    className="md:hidden text-white text-2xl"
+                    className="lg:hidden text-white text-2xl z-50 pr-2"
                     onClick={() => setMenuOpen(!menuOpen)}
                     aria-label="Toggle navigation"
                 >
@@ -86,7 +84,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-black/95 backdrop-blur-md border-t border-white/10"
+                        className="lg:hidden bg-black/95 backdrop-blur-md border-t border-white/10 absolute top-full left-0 w-full shadow-2xl overflow-hidden"
                     >
                         <ul className="flex flex-col px-6 py-4 gap-4">
                             {navLinks.map((link) => (
