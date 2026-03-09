@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import EfiqLogo from "../EfiqLogo";
 
 const InteractiveText = ({ text }) => {
     const [hoveredIdx, setHoveredIdx] = useState(null);
@@ -92,11 +92,9 @@ export default function Mission() {
                         transition={{ duration: 0.7, delay: 0.2 }}
                         className="w-full md:w-5/12 flex justify-center md:justify-end"
                     >
-                        <img
-                            src="/assets/logo.png"
-                            alt="EFIQ Solutions Logo"
-                            className="w-64 md:w-full max-w-[320px] object-contain"
-                        />
+                        <div className="w-64 md:w-full h-32 md:h-40 flex items-center justify-center max-w-[320px]">
+                            <EfiqLogo phase="static" />
+                        </div>
                     </motion.div>
 
                     {/* Right side: Text */}

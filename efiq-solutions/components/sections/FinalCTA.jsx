@@ -8,7 +8,10 @@ export default function FinalCTA() {
                 <div className="bg-[#1f1f1f] rounded-2xl py-16 px-8 md:px-16 flex flex-col items-center text-center">
 
                     {/* Header */}
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                    <h2
+                        className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-wide"
+                        style={{ fontFamily: "'Orbitron', sans-serif" }}
+                    >
                         Ready to Transform your Business?
                     </h2>
 

@@ -1,237 +1,227 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiChevronLeft, FiChevronRight, FiStar } from "react-icons/fi";
+import { FiArrowRight, FiCoffee } from "react-icons/fi";
 
 const testimonials = [
     {
-        company: "Demo Corp",
-        abbr: "DC",
-        quote:
-            "Content energizes Infiniti shorter formats tailored to engage audiences, such as abandoned blog posts, promotion landing page copy, information newsletters, and social media posts, all designed to build brand authority and audience connections.",
-        author: "John Smith",
-        role: "CTO, Demo Corp",
-        rating: 5,
+        id: "puma",
+        quote: "There are so many exciting combinations that PUMA can create with Sanity. Now that we have a structure, it's infinitely scalable.",
+        author: "Bettina Donmez",
+        role: "E-Commerce Platform Development @ PUMA",
+        image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop",
+        linkText: "Read the PUMA story",
+        logo: () => (
+            <div className="flex items-center gap-1.5">
+                <span className="font-black italic text-lg lg:text-xl tracking-tighter">PUMA</span>
+            </div>
+        ),
+        largeLogo: () => (
+            <div className="text-white">
+                <span className="font-black italic text-5xl tracking-tighter drop-shadow-lg">PUMA</span>
+            </div>
+        )
     },
     {
-        company: "Nexus Defense",
-        abbr: "ND",
-        quote:
-            "EFIQ Solutions delivered a radar integration that exceeded our performance benchmarks by 40%. Their engineering team's depth of knowledge and responsiveness was exceptional throughout the project lifecycle.",
-        author: "Sarah Johnson",
-        role: "Director of Operations, Nexus Defense",
-        rating: 5,
+        id: "tecovas",
+        quote: "Sanity has been a game-changer for our content velocity. We can deploy new campaigns in minutes rather than days.",
+        author: "Jane Smith",
+        role: "Marketing Director @ TECOVAS",
+        image: "https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071&auto=format&fit=crop",
+        linkText: "Read the TECOVAS story",
+        logo: () => <span className="font-bold tracking-[0.2em] text-xs lg:text-sm">TECOVAS</span>,
+        largeLogo: () => <span className="font-bold tracking-[0.2em] text-3xl text-white drop-shadow-lg">TECOVAS</span>
     },
     {
-        company: "AeroVision",
-        abbr: "AV",
-        quote:
-            "The flight safety platform they developed for us has been seamlessly integrated into our airport operations. The reduction in bird strikes alone justified the investment within six months.",
-        author: "Michael Chen",
-        role: "Head of Aviation Safety, AeroVision",
-        rating: 5,
+        id: "morningbrew",
+        quote: "Our editorial workflow is now lightning fast. The real-time collaboration features are essential for our daily newsletter operations.",
+        author: "Alex Johnson",
+        role: "Editorial Director @ Morning Brew",
+        image: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1974&auto=format&fit=crop",
+        linkText: "Read the Morning Brew story",
+        logo: () => (
+            <div className="flex items-center gap-2">
+                <FiCoffee className="w-4 h-4" />
+                <span className="font-bold text-[10px] lg:text-xs tracking-tight uppercase">Morning Brew Inc.</span>
+            </div>
+        ),
+        largeLogo: () => (
+            <div className="flex items-center gap-3 text-white drop-shadow-lg">
+                <FiCoffee className="w-10 h-10" />
+                <span className="font-bold text-2xl tracking-tight uppercase">Morning Brew Inc.</span>
+            </div>
+        )
     },
+    {
+        id: "vercel",
+        quote: "Integrating Sanity with Next.js provides the best developer experience and performance out of the box.",
+        author: "Lee Robinson",
+        role: "VP Developer Experience @ Vercel",
+        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
+        linkText: "Read the Vercel story",
+        logo: () => (
+            <div className="flex items-center gap-1.5">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M12 2L24 22H0L12 2Z" /></svg>
+                <span className="font-bold text-sm lg:text-base tracking-tight">Vercel</span>
+            </div>
+        ),
+        largeLogo: () => (
+            <div className="flex items-center gap-3 text-white drop-shadow-lg">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10"><path d="M12 2L24 22H0L12 2Z" /></svg>
+                <span className="font-bold text-3xl tracking-tight">Vercel</span>
+            </div>
+        )
+    }
 ];
 
 export default function Testimonials() {
-    const [[current, direction], setPage] = useState([0, 0]);
+    const [activeId, setActiveId] = useState(testimonials[0].id);
+    const activeTestimonial = testimonials.find(t => t.id === activeId);
 
-    const paginate = (newDirection) => {
-        setPage([
-            (current + newDirection + testimonials.length) % testimonials.length,
-            newDirection,
-        ]);
-    };
-
-    const goTo = (index) => {
-        if (index === current) return;
-        setPage([index, index > current ? 1 : -1]);
-    };
-
-    // autoplay
+    // Auto-slider functionality
     useEffect(() => {
         const timer = setInterval(() => {
-            paginate(1);
-        }, 3000);
+            setActiveId(currentId => {
+                const currentIndex = testimonials.findIndex(t => t.id === currentId);
+                const nextIndex = (currentIndex + 1) % testimonials.length;
+                return testimonials[nextIndex].id;
+            });
+        }, 3000); // Change slide every 5 seconds
 
         return () => clearInterval(timer);
-    }, [current, paginate]);
-
-    const variants = {
-        enter: (direction) => ({
-            x: direction > 0 ? 600 : -600,
-            opacity: 0,
-            scale: 0.95,
-        }),
-        center: {
-            x: 0,
-            opacity: 1,
-            scale: 1,
-        },
-        exit: (direction) => ({
-            x: direction > 0 ? -600 : 600,
-            opacity: 0,
-            scale: 0.95,
-        }),
-    };
-
-    const t = testimonials[current];
+    }, []);
 
     return (
-        <section className="py-24 bg-black relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,_rgba(10,132,255,0.05),_transparent)]" />
-
-            <div className="relative max-w-4xl mx-auto px-6">
+        <section className="bg-black text-[#ececf1] py-16 px-4 md:px-8" style={{ fontFamily: "'Manrope', sans-serif" }}>
+            <div className="max-w-[1040px] mx-auto">
 
                 {/* Header */}
-
-                <div className="text-center mb-14">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0A84FF]/20 bg-[#0A84FF]/5 text-[#0A84FF] text-xs tracking-widest uppercase mb-5">
-                        Client Stories
+                <div className="flex flex-col gap-4 mb-10">
+                    <div className="flex items-center gap-3">
+                        <div className="flex items-center text-[10px] sm:text-[11px] font-bold tracking-widest uppercase bg-[#1e1e24] rounded-full overflow-hidden border border-white/5 shadow-sm">
+                            <span className="px-3 py-1.5 text-white/70" style={{ fontFamily: "'Orbitron', sans-serif" }}>Customers</span>
+                            <span className="bg-[#00e5ff] text-black px-2.5 py-1.5 flex items-center justify-center">
+                                <FiArrowRight size={14} strokeWidth={2.5} />
+                            </span>
+                        </div>
+                        <a href="#" className="text-sm font-semibold hover:text-white transition-colors text-white/80">
+                            Read more stories
+                        </a>
                     </div>
 
-                    <h2
-                        className="text-3xl md:text-4xl font-black text-white"
-                        style={{ fontFamily: "'Orbitron', sans-serif" }}
-                    >
-                        Trusted by Industry Leaders
+                    <h2 className="text-4xl md:text-[2.75rem] leading-[1.1] font-medium tracking-tight text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                        Trusted by the most innovative teams
                     </h2>
+
+                    <p className="text-lg md:text-xl text-white/60">
+                        Innovative brands build fast, scalable solutions with Sanity's Content Operating System
+                    </p>
                 </div>
 
-                {/* Slider */}
+                {/* Main Card */}
+                <div className="rounded-2xl overflow-hidden bg-[#16181d] border border-white/5 flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
 
-                <div className="relative">
-                    <div className="relative h-[400px] md:h-[350px] overflow-hidden">
+                    {/* Image and Quote Section */}
+                    <div className="relative h-[200px] md:h-[240px] lg:h-[250px] bg-black overflow-hidden flex flex-col justify-end p-6 md:p-10">
+                        <AnimatePresence mode="popLayout">
+                            <motion.img
+                                key={activeTestimonial.id}
+                                src={activeTestimonial.image}
+                                initial={{ opacity: 0, scale: 1.05 }}
+                                animate={{ opacity: 0.6, scale: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.5, ease: "easeOut" }}
+                                className="absolute inset-0 w-full h-full object-cover mix-blend-screen"
+                            />
+                        </AnimatePresence>
 
-                        <AnimatePresence initial={false} custom={direction} mode="wait">
+                        {/* Gradients */}
+                        <div className="absolute inset-x-0 bottom-0 h-4/5 bg-gradient-to-t from-[#16181d] via-[#16181d]/80 to-transparent z-10 pointer-events-none"></div>
+                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"></div>
 
+                        {/* Large Logo Top Left */}
+                        <div className="absolute top-8 left-8 z-20">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activeTestimonial.id}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <activeTestimonial.largeLogo />
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Quote */}
+                        <div className="relative z-20 w-full max-w-[90%] md:max-w-[85%]">
+                            <AnimatePresence mode="wait">
+                                <motion.p
+                                    key={activeTestimonial.id}
+                                    initial={{ opacity: 0, y: 15 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -15 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="text-lg md:text-2xl font-medium leading-[1.3] text-white italic"
+                                >
+                                    "{activeTestimonial.quote}"
+                                </motion.p>
+                            </AnimatePresence>
+                        </div>
+                    </div>
+
+                    {/* Author and Link Bar */}
+                    <div className="relative z-20 flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-6 md:px-10 py-5 bg-[#1a1b20] border-b border-white/[0.03]">
+                        <AnimatePresence mode="wait">
                             <motion.div
-                                key={current}
-                                custom={direction}
-                                variants={variants}
-                                initial="enter"
-                                animate="center"
-                                exit="exit"
-                                drag="x"
-                                dragConstraints={{ left: 0, right: 0 }}
-                                onDragEnd={(e, { offset }) => {
-                                    if (offset.x > 100) paginate(-1);
-                                    else if (offset.x < -100) paginate(1);
-                                }}
-                                transition={{
-                                    x: { type: "spring", stiffness: 120, damping: 20 },
-                                    opacity: { duration: 0.35 },
-                                    scale: { duration: 0.35 },
-                                }}
-                                className="absolute inset-0 rounded-2xl border border-white/10 bg-[#0d0d0d]/80 backdrop-blur-md p-8 md:p-10 shadow-[0_0_40px_rgba(10,132,255,0.15)]"
+                                key={activeTestimonial.id}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="flex flex-col"
                             >
-
-                                {/* Company */}
-
-                                <div className="flex items-center gap-4 mb-8">
-                                    <div className="w-12 h-12 rounded-xl bg-[#0A84FF]/10 border border-[#0A84FF]/20 flex items-center justify-center">
-                                        <span
-                                            className="text-[#0A84FF] font-bold text-xs"
-                                            style={{ fontFamily: "'Orbitron', sans-serif" }}
-                                        >
-                                            {t.abbr}
-                                        </span>
-                                    </div>
-
-                                    <div>
-                                        <div className="text-white font-semibold text-sm">
-                                            {t.company}
-                                        </div>
-
-                                        <div className="flex gap-0.5 mt-1">
-                                            {Array.from({ length: t.rating }).map((_, i) => (
-                                                <FiStar
-                                                    key={i}
-                                                    size={12}
-                                                    className="text-[#22C55E] fill-[#22C55E]"
-                                                />
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Quote */}
-
-                                <blockquote className="text-white/70 text-base md:text-lg leading-relaxed mb-8 relative">
-                                    <span className="text-[#0A84FF] text-5xl font-serif absolute -top-4 -left-2 opacity-30">
-                                        &quot;
-                                    </span>
-                                    {t.quote}
-                                </blockquote>
-
-                                {/* Author */}
-
-                                <div className="pt-6 border-t border-white/10">
-                                    <div className="text-white text-sm font-semibold">
-                                        {t.author}
-                                    </div>
-
-                                    <div className="text-white/40 text-xs mt-0.5">
-                                        {t.role}
-                                    </div>
-                                </div>
-
+                                <span className="text-white/90 font-medium text-[13px] md:text-sm mb-0.5">{activeTestimonial.author}</span>
+                                <span className="text-white/50 text-[12px] md:text-xs">{activeTestimonial.role}</span>
                             </motion.div>
+                        </AnimatePresence>
 
+                        <AnimatePresence mode="wait">
+                            <motion.a
+                                key={activeTestimonial.id}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                href="#"
+                                className="flex items-center gap-2 text-white font-semibold text-xs md:text-sm hover:text-white/80 transition-colors group shrink-0"
+                            >
+                                {activeTestimonial.linkText}
+                                <FiArrowRight strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
+                            </motion.a>
                         </AnimatePresence>
                     </div>
 
-                    {/* Controls */}
-
-                    <div className="flex items-center justify-between mt-8 relative z-10">
-
-                        <div className="flex gap-2">
-                            {testimonials.map((_, i) => (
-                                <button
-                                    key={i}
-                                    onClick={() => goTo(i)}
-                                    className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current
-                                        ? "bg-[#0A84FF] w-6"
-                                        : "bg-white/20 hover:bg-white/40"
-                                        }`}
-                                />
-                            ))}
-                        </div>
-
-                        <div className="flex gap-2">
-
+                    {/* Tabs / Logos Bar */}
+                    <div className="flex flex-wrap items-center gap-2 px-6 md:px-10 py-5 bg-[#1f2128]">
+                        {testimonials.map((t) => (
                             <button
-                                onClick={() => paginate(-1)}
-                                className="w-10 h-10 rounded-full border border-white/10 bg-white/5 hover:border-[#0A84FF] hover:bg-[#0A84FF]/5 flex items-center justify-center text-white/50 hover:text-[#0A84FF] transition-all duration-300"
+                                key={t.id}
+                                onClick={() => setActiveId(t.id)}
+                                className={`
+                                    flex items-center justify-center px-4 py-2.5 rounded-lg transition-all duration-300 min-w-[100px] lg:min-w-[120px]
+                                    ${activeId === t.id
+                                        ? 'bg-black text-white shadow-inner border border-white/10'
+                                        : 'bg-transparent text-white/50 hover:text-white hover:bg-white/5'}
+                                `}
                             >
-                                <FiChevronLeft size={18} />
+                                <t.logo />
                             </button>
-
-                            <button
-                                onClick={() => paginate(1)}
-                                className="w-10 h-10 rounded-full border border-white/10 bg-white/5 hover:border-[#0A84FF] hover:bg-[#0A84FF]/5 flex items-center justify-center text-white/50 hover:text-[#0A84FF] transition-all duration-300"
-                            >
-                                <FiChevronRight size={18} />
-                            </button>
-
-                        </div>
-
+                        ))}
                     </div>
+
                 </div>
-
-                {/* Logo strip */}
-
-                <div className="mt-12 flex flex-wrap justify-center gap-5">
-                    {["Demo", "Demo", "Demo", "Demo", "Demo", "Demo"].map((d, i) => (
-                        <div
-                            key={i}
-                            className="px-5 py-2.5 rounded-full border border-white/10 bg-white/5 text-white/25 text-xs font-medium tracking-wider hover:border-[#0A84FF]/30 hover:text-white/50 transition-all duration-200 cursor-pointer"
-                        >
-                            {d}
-                        </div>
-                    ))}
-                </div>
-
             </div>
         </section>
     );

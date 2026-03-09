@@ -1,10 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import { FiMail, FiPhone, FiMapPin, FiSend } from "react-icons/fi";
+import { FiMail, FiPhone, FiMapPin, FiSend, FiCheck } from "react-icons/fi";
 import { useState } from "react";
 
 export default function Contact() {
-    const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
+    const [form, setForm] = useState({ name: "", email: "", company: "", phone: "", message: "" });
     const [submitted, setSubmitted] = useState(false);
 
     const handleSubmit = (e) => {
@@ -14,7 +14,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-24 bg-black relative overflow-hidden">
+        <section id="contact" className="py-24 bg-black relative overflow-hidden" style={{ fontFamily: "'Manrope', sans-serif" }}>
             {/* Mesh Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#0A84FF]/10 blur-[120px] rounded-full animate-pulse" />
@@ -146,6 +146,20 @@ export default function Contact() {
                                     </div>
 
                                     <div className="relative">
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            className="peer w-full bg-transparent border-b-2 border-white/10 py-2 text-white outline-none focus:border-[#0A84FF] transition-colors placeholder-transparent"
+                                            placeholder="Phone Number"
+                                            value={form.phone}
+                                            onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                                        />
+                                        <label htmlFor="phone" className="absolute left-0 -top-3.5 text-white/30 text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-[#0A84FF] peer-focus:text-xs">
+                                            Phone Number
+                                        </label>
+                                    </div>
+
+                                    <div className="relative">
                                         <textarea
                                             id="message"
                                             rows={4}
@@ -156,7 +170,22 @@ export default function Contact() {
                                             onChange={(e) => setForm({ ...form, message: e.target.value })}
                                         />
                                         <label htmlFor="message" className="absolute left-0 -top-3.5 text-white/30 text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-[#0A84FF] peer-focus:text-xs">
-                                            Your Project Details
+                                            Message
+                                        </label>
+                                    </div>
+
+                                    <div className="flex items-start gap-4">
+                                        <div className="relative flex items-center pt-1 mt-0.5 cursor-pointer shrink-0">
+                                            <input
+                                                type="checkbox"
+                                                id="privacy"
+                                                required
+                                                className="peer appearance-none w-4 h-4 rounded border border-white/20 bg-transparent checked:bg-[#0A84FF] checked:border-[#0A84FF] transition-colors cursor-pointer"
+                                            />
+                                            <FiCheck size={12} className="absolute inset-0 m-auto text-white opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity" />
+                                        </div>
+                                        <label htmlFor="privacy" className="text-white/60 text-[13px] md:text-sm cursor-pointer select-none leading-relaxed">
+                                            I'd like to receive more information about company. I understand and agree to the <a href="/PrivacyPolicy" className="text-[#0A84FF] hover:underline transition-all" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                                         </label>
                                     </div>
 

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
+import EfiqLogo from "./EfiqLogo";
 
 const navLinks = [
     { label: "Solutions", href: "#solutions" },
@@ -36,7 +37,9 @@ export default function Navbar() {
             <div className="flex justify-between items-center w-full px-6 md:px-12 lg:px-20 py-2">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group z-50">
-                    <img src="/assets/logo.png" alt="Logo" className="w-16 md:w-20 h-16 md:h-20 object-contain" />
+                    <div className="w-24 md:w-32 h-10 md:h-12 flex items-center justify-center">
+                        <EfiqLogo phase="navbar" />
+                    </div>
                 </Link>
 
                 <div className="hidden lg:flex items-center gap-8">

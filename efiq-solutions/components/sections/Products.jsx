@@ -36,7 +36,8 @@ export default function Products() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-bold text-white tracking-wide"
+                        className="text-4xl md:text-5xl font-bold text-white tracking-widest uppercase"
+                        style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         Products
                     </motion.h2>
@@ -64,10 +65,13 @@ export default function Products() {
 
                             {/* Content Area */}
                             <div className="p-6 flex-grow flex flex-col">
-                                <h3 className="text-white font-bold text-xl mb-3">
+                                <h3
+                                    className="text-white font-bold text-xl mb-3 tracking-wide"
+                                    style={{ fontFamily: "'Orbitron', sans-serif" }}
+                                >
                                     {product.name}
                                 </h3>
-                                <p className="text-white/80 text-sm leading-relaxed">
+                                <p className="text-white/80 text-sm leading-relaxed font-light">
                                     {product.desc}
                                 </p>
                             </div>

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
+import EfiqLogo from "./EfiqLogo";
 
 const StarburstIcon = () => (
     <div className="relative w-7 h-7 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
@@ -23,11 +23,9 @@ export default function Footer() {
 
                     {/* Left: Logo and Tagline */}
                     <div className="md:col-span-5 lg:col-span-6 flex flex-col items-start justify-center">
-                        <img
-                            src="/assets/logo.png"
-                            alt="EFIQ Solutions"
-                            className="w-56 md:w-64 mb-6 object-contain"
-                        />
+                        <div className="w-56 md:w-64 h-20 md:h-24 mb-6">
+                            <EfiqLogo phase="static" />
+                        </div>
                         <p className="text-white text-md font-medium tracking-wide">
                             Your Tech and Digital Partner
                         </p>
@@ -73,7 +71,15 @@ export default function Footer() {
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
                         {["Privacy Policy", "Terms and Conditions", "Cookies Settings"].map((item) => (
-                            <Link key={item} href="#" className="text-white/90 text-xs md:text-sm hover:text-[#0A84FF] transition-colors font-medium underline underline-offset-4 decoration-white/40 hover:decoration-[#0A84FF]">
+                            <Link
+                                key={item}
+                                href={
+                                    item === "Privacy Policy" ? "/PrivacyPolicy" :
+                                        item === "Terms and Conditions" ? "/TermsAndConditions" :
+                                            "#"
+                                }
+                                className="text-white/90 text-xs md:text-sm hover:text-[#0A84FF] transition-colors font-medium underline underline-offset-4 decoration-white/40 hover:decoration-[#0A84FF]"
+                            >
                                 {item}
                             </Link>
                         ))}
