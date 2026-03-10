@@ -53,15 +53,15 @@ export default function ClientLogos() {
     }, [centerIndex]);
 
     return (
-        <section className="bg-[#080808] border-y border-white/5 overflow-hidden">
+        <section className="bg-black border-b border-white/5 overflow-hidden">
             <div className="max-w-7xl mx-auto px-2">
-                <p className="text-center text-white/30 text-xs uppercase tracking-widest pt-4">
+                <p className="text-center text-white/30 text-xs uppercase tracking-widest">
                     We are proud to work with
                 </p>
                 <div className="relative">
                     {/* Linear Gradient Masks for smooth fading edges */}
-                    <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#080808] to-transparent z-10 pointer-events-none" />
-                    <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#080808] to-transparent z-10 pointer-events-none" />
+                    {/* <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#080808] to-transparent z-10 pointer-events-none" /> */}
+                    {/* <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#080808] to-transparent z-10 pointer-events-none" /> */}
 
                     <div className="flex overflow-hidden" ref={containerRef}>
                         <motion.div
@@ -90,7 +90,7 @@ export default function ClientLogos() {
                                         src={logo.src}
                                         alt={logo.name}
                                         className={`h-26 md:h-50 w-auto object-contain transition-all duration-300 ${centerIndex === i
-                                            ? "opacity-100 filter-none scale-150 duration-300"
+                                            ? "opacity-100 filter-none duration-300"
                                             : "opacity-40 filter grayscale scale-100 hover:opacity-100 hover:filter-none hover:scale-110"
                                             }`}
                                     />

@@ -17,6 +17,7 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [showSolutionsMenu, setShowSolutionsMenu] = useState(false);
+    const [showCompanyMenu, setShowCompanyMenu] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -68,68 +69,53 @@ export default function Navbar() {
 
                                         {/* Card 1 */}
                                         <div className="bg-white/5 rounded-xl p-2.5 flex flex-col items-center w-[160px] group/card hover:bg-white/10 transition-colors border border-white/5 hover:border-white/20">
-                                            <div className="relative w-full h-[120px] rounded-lg overflow-hidden mb-3">
+                                            <div className="relative w-full h-[120px] rounded-lg overflow-hidden">
                                                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" alt="Engineering" className="object-cover w-full h-full opacity-60 group-hover/card:opacity-100 transition-opacity duration-300" />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3">
                                                     <span className="text-white font-bold text-sm text-center leading-tight">Engineering<br />Solutions</span>
                                                 </div>
                                             </div>
-                                            <Link href="#engineering" className="bg-[#22C55E] hover:bg-[#16a34a] text-black font-bold py-1.5 px-6 rounded-md text-xs transition-colors w-full text-center">
-                                                Explore
-                                            </Link>
                                         </div>
 
                                         {/* Card 2 */}
                                         <div className="bg-white/5 rounded-xl p-2.5 flex flex-col items-center w-[160px] group/card hover:bg-white/10 transition-colors border border-white/5 hover:border-white/20">
-                                            <div className="relative w-full h-[120px] rounded-lg overflow-hidden mb-3">
+                                            <div className="relative w-full h-[120px] rounded-lg overflow-hidden">
                                                 <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop" alt="Robotics" className="object-cover w-full h-full opacity-60 group-hover/card:opacity-100 transition-opacity duration-300" />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3">
                                                     <span className="text-white font-bold text-sm text-center leading-tight">Robotics &<br />Autonomous<br />Systems</span>
                                                 </div>
                                             </div>
-                                            <Link href="#robotics" className="bg-[#22C55E] hover:bg-[#16a34a] text-black font-bold py-1.5 px-6 rounded-md text-xs transition-colors w-full text-center">
-                                                Explore
-                                            </Link>
                                         </div>
 
                                         {/* Card 3 */}
                                         <div className="bg-white/5 rounded-xl p-2.5 flex flex-col items-center w-[160px] group/card hover:bg-white/10 transition-colors border border-white/5 hover:border-white/20">
-                                            <div className="relative w-full h-[120px] rounded-lg overflow-hidden mb-3">
+                                            <div className="relative w-full h-[120px] rounded-lg overflow-hidden">
                                                 <div className="absolute inset-0 bg-purple-900/40 mix-blend-overlay z-10 hidden group-hover/card:block"></div>
                                                 <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=2036&auto=format&fit=crop" alt="Research" className="object-cover w-full h-full opacity-60 group-hover/card:opacity-100 transition-opacity duration-300" />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3 z-20">
                                                     <span className="text-white font-bold text-sm text-center leading-tight">Research &<br />Innovation</span>
                                                 </div>
                                             </div>
-                                            <Link href="#research" className="bg-[#22C55E] hover:bg-[#16a34a] text-black font-bold py-1.5 px-6 rounded-md text-xs transition-colors w-full text-center">
-                                                Explore
-                                            </Link>
                                         </div>
 
                                         {/* Card 4 */}
                                         <div className="bg-white/5 rounded-xl p-2.5 flex flex-col items-center w-[160px] group/card hover:bg-white/10 transition-colors border border-white/5 hover:border-white/20">
-                                            <div className="relative w-full h-[120px] rounded-lg overflow-hidden mb-3">
+                                            <div className="relative w-full h-[120px] rounded-lg overflow-hidden">
                                                 <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop" alt="Custom Dev" className="object-cover w-full h-full opacity-60 group-hover/card:opacity-100 transition-opacity duration-300" />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3">
                                                     <span className="text-white font-bold text-sm text-center leading-tight">Custom<br />Technology<br />Development</span>
                                                 </div>
                                             </div>
-                                            <Link href="#custom" className="bg-[#22C55E] hover:bg-[#16a34a] text-black font-bold py-1.5 px-6 rounded-md text-xs transition-colors w-full text-center">
-                                                Explore
-                                            </Link>
                                         </div>
 
                                         {/* Card 5 - Others */}
                                         <div className="bg-white/5 rounded-xl p-2.5 flex flex-col items-center w-[160px] group/card hover:bg-white/10 transition-colors border border-white/5 hover:border-white/20">
-                                            <div className="relative w-full h-[120px] rounded-lg overflow-hidden mb-3 bg-[#2a2a2e] flex items-center justify-center">
+                                            <div className="relative w-full h-[120px] rounded-lg overflow-hidden bg-[#2a2a2e] flex items-center justify-center">
                                                 <svg className="w-5 h-5 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" /></svg>
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end justify-center pb-4">
                                                     <span className="text-white font-bold text-sm text-center">Others</span>
                                                 </div>
                                             </div>
-                                            <Link href="#others" className="bg-[#22C55E] hover:bg-[#16a34a] text-black font-bold py-1.5 px-6 rounded-md text-xs transition-colors w-full text-center">
-                                                Explore
-                                            </Link>
                                         </div>
 
                                     </div>
@@ -137,10 +123,41 @@ export default function Navbar() {
                             )}
                         </AnimatePresence>
                     </div>
-                    <Link href="#products" className="text-white hover:text-white transition-colors duration-200 tracking-wide">
+                    <Link href="#products" className="text-white hover:text-[#22C55E] transition-colors duration-200 tracking-wide">
                         Products
                     </Link>
-                    <Link href="#contact" className="text-white hover:text-white transition-colors duration-200 tracking-wide">
+
+                    {/* Company Dropdown */}
+                    <div
+                        className="relative group"
+                        onMouseEnter={() => setShowCompanyMenu(true)}
+                        onMouseLeave={() => setShowCompanyMenu(false)}
+                    >
+                        <button className="text-white hover:text-[#22C55E] transition-colors duration-200 tracking-wide flex items-center gap-1 py-4">
+                            Company
+                            <svg className={`w-4 h-4 transition-transform duration-200 ${showCompanyMenu ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+
+                        <AnimatePresence>
+                            {showCompanyMenu && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 10 }}
+                                    transition={{ duration: 0.2 }}
+                                    className="absolute top-[64px] left-0 pt-2 z-50 w-48"
+                                >
+                                    <div className="bg-[#16181d] rounded-xl p-2 shadow-2xl border border-white/10 flex flex-col overflow-hidden">
+                                        <Link href="/about" className="px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all">About Us</Link>
+                                        <Link href="#careers" className="px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all">Careers</Link>
+                                        <Link href="#newsletter" className="px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all">Newsletter</Link>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+
+                    <Link href="#contact" className="text-white hover:text-[#22C55E] transition-colors duration-200 tracking-wide">
                         Contact
                     </Link>
                 </div>

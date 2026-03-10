@@ -221,7 +221,7 @@ export default function Contact() {
                                             <FiCheck size={12} className="absolute inset-0 m-auto text-white opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity" />
                                         </div>
                                         <label htmlFor="privacy" className="text-white/60 text-[13px] md:text-sm cursor-pointer select-none leading-relaxed">
-                                            I'd like to receive more information about company. I understand and agree to the <a href="/PrivacyPolicy" className="text-[#0A84FF] hover:underline transition-all" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                                            I'd like to receive more information about company. I understand and agree to the <br></br> <a href="/PrivacyPolicy" className="text-[#0A84FF] hover:underline transition-all" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                                         </label>
                                     </div>
 

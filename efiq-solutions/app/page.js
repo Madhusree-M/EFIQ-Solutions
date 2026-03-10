@@ -15,8 +15,10 @@ export default function Home() {
         <>
             <Navbar />
             <main>
-                <Hero />
-                <ClientLogos />
+                <div className="h-screen flex flex-col overflow-hidden">
+                    <Hero />
+                    <ClientLogos />
+                </div>
                 <Mission />
                 <Markets />
                 <Stats />

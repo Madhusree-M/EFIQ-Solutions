@@ -1,12 +1,35 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, animate, useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 const stats = [
-    { number: "40+", label: "Solutions Delivered", desc: "Across engineering and software solutions" },
-    { number: "30+", label: "Clients Served", desc: "Trusted by organizations and teams" },
-    { number: "18+", label: "Engineers & Innovators", desc: "Multidisciplinary technology experts" },
-    { number: "7+", label: "Own Products", desc: "Innovations built and developed in-house" },
+    { number: 40, suffix: "+", label: "Solutions Delivered", desc: "Across engineering and software solutions" },
+    { number: 30, suffix: "+", label: "Clients Served", desc: "Trusted by organizations and teams" },
+    { number: 18, suffix: "+", label: "Engineers & Innovators", desc: "Multidisciplinary technology experts" },
+    { number: 7, suffix: "+", label: "Own Products", desc: "Innovations built and developed in-house" },
 ];
+
+function AnimatedNumber({ value, suffix }) {
+    const nodeRef = useRef(null);
+    const inView = useInView(nodeRef, { once: true, margin: "-100px" });
+
+    useEffect(() => {
+        if (inView) {
+            const controls = animate(0, value, {
+                duration: 2,
+                ease: "easeOut",
+                onUpdate: (latest) => {
+                    if (nodeRef.current) {
+                        nodeRef.current.textContent = Math.round(latest) + suffix;
+                    }
+                },
+            });
+            return () => controls.stop();
+        }
+    }, [inView, value, suffix]);
+
+    return <span ref={nodeRef}>0{suffix}</span>;
+}
 
 export default function Stats() {
     return (
@@ -47,7 +70,7 @@ export default function Stats() {
                             <div
                                 className="text-6xl md:text-7xl font-black text-white mb-6 tracking-tighter hover:text-[#0A84FF] scale-105 transition-all duration-300 cursor-default"
                             >
-                                {stat.number}
+                                <AnimatedNumber value={stat.number} suffix={stat.suffix} />
                             </div>
                             <h3
                                 className="text-white text-xl font-bold uppercase tracking-widest mb-4 min-h-[3rem] lg:min-h-[3.5rem]"

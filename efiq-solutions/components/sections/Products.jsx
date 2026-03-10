@@ -5,22 +5,22 @@ const products = [
     {
         name: "SAAS Product",
         desc: "Cloud-based business and automation software.",
-        imgSrc: "/assets/logo.png",
+        imgSrc: "/assets/Products%20image/EFIQ%20One%20Logo%20White.png",
     },
     {
         name: "Robotics Systems",
         desc: "Advanced robotics and drone technology solutions.",
-        imgSrc: "/assets/logo.png",
+        imgSrc: "/assets/Products%20image/Drone.png",
     },
     {
         name: "Security Technology",
         desc: "Monitoring and surveillance technology systems.",
-        imgSrc: "/assets/logo.png",
+        imgSrc: "/assets/Products%20image/Command%20centre.png",
     },
     {
         name: "Engineering Prototypes",
         desc: "Custom-built experimental systems for innovation.",
-        imgSrc: "/assets/logo.png",
+        imgSrc: "/assets/Products%20image/submarine%20image%20Generated.png",
     },
 ];
 
@@ -55,11 +55,11 @@ export default function Products() {
                             className="group flex flex-col rounded-2xl overflow-hidden bg-[#1a1a1a]"
                         >
                             {/* Image Area */}
-                            <div className="w-full aspect-square bg-[#333333] flex items-center justify-center p-8">
+                            <div className="w-full aspect-square bg-[#111111] flex items-center justify-center p-2 overflow-hidden border-b border-white/5">
                                 <img
                                     src={product.imgSrc}
                                     alt={product.name}
-                                    className="w-full h-full object-contain opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                                    className="w-full h-full object-contain grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
                                 />
                             </div>
 
