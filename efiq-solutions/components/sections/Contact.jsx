@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FiMail, FiPhone, FiMapPin, FiSend, FiCheck } from "react-icons/fi";
+import { FiMail, FiPhone, FiMapPin, FiSend, FiCheck, FiInstagram, FiLinkedin, FiX, FiYoutube, FiTwitter } from "react-icons/fi";
 import { useState } from "react";
 
 export default function Contact() {
@@ -43,7 +43,7 @@ export default function Contact() {
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         DESIGNING THE<br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0A84FF] to-[#22C55E]">FUTURE OF SENSING</span>
+                        <span className="text-[#0A84FF]">FUTURE OF SENSING</span>
                     </motion.h2>
                 </div>
 
@@ -65,8 +65,9 @@ export default function Contact() {
 
                         <div className="space-y-6">
                             {[
-                                { icon: FiMail, label: "Official Inquiry", value: "info@efiqsolutions.com", color: "#0A84FF" },
-                                { icon: FiPhone, label: "Direct Support", value: "+1 (555) 000-0000", color: "#22C55E" },
+                                { icon: FiMail, label: "For General Inquiry", value: "hello@efiqsolutions.com", color: "#0A84FF" },
+                                { icon: FiMail, label: "For Support", value: "support@efiqsolutions.com", color: "#0A84FF" },
+                                { icon: FiPhone, label: "Call Us", value: "+91 83003 80216", color: "#22C55E" },
                                 { icon: FiMapPin, label: "Hub Location", value: "Innovation District, Silicon Valley, CA", color: "#0A84FF" },
                             ].map((item, i) => (
                                 <motion.div
@@ -83,6 +84,41 @@ export default function Contact() {
                                     </div>
                                 </motion.div>
                             ))}
+                        </div>
+                        {/* Social media links with icons 
+                        Instagram , Linked in , X , Youtube
+                        */}
+                        <div className="flex gap-4">
+                            <motion.a
+                                whileHover={{ scale: 1.1 }}
+                                href="#"
+                                className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#0A84FF]/40 transition-all duration-300"
+                            >
+                                <FiInstagram size={20} className="text-white group-hover:text-[#0A84FF] transition-colors" />
+                            </motion.a>
+                            <motion.a
+                                whileHover={{ scale: 1.1 }}
+                                href="#"
+                                className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#0A84FF]/40 transition-all duration-300"
+                            >
+                                <FiLinkedin size={20} className="text-white group-hover:text-[#0A84FF] transition-colors" />
+                            </motion.a>
+                            <motion.a
+                                whileHover={{ scale: 1.1 }}
+                                href="#"
+                                className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#0A84FF]/40 transition-all duration-300"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
+                                    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                                </svg>
+                            </motion.a>
+                            <motion.a
+                                whileHover={{ scale: 1.1 }}
+                                href="#"
+                                className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#0A84FF]/40 transition-all duration-300"
+                            >
+                                <FiYoutube size={20} className="text-white group-hover:text-[#0A84FF] transition-colors" />
+                            </motion.a>
                         </div>
                     </motion.div>
 

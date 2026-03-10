@@ -5,72 +5,49 @@ import { FiArrowRight, FiCoffee } from "react-icons/fi";
 
 const testimonials = [
     {
-        id: "puma",
-        quote: "There are so many exciting combinations that PUMA can create with Sanity. Now that we have a structure, it's infinitely scalable.",
-        author: "Bettina Donmez",
-        role: "E-Commerce Platform Development @ PUMA",
+        id: "hifi",
+        quote: "They built our developed custom software for our operations. The solution worked exactly as we expected and made a big difference in our day-to-day work.",
+        company: "Hifi Hydrodip and chrome",
         image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop",
-        linkText: "Read the PUMA story",
-        logo: () => (
-            <div className="flex items-center gap-1.5">
-                <span className="font-black italic text-lg lg:text-xl tracking-tighter">PUMA</span>
-            </div>
-        ),
-        largeLogo: () => (
-            <div className="text-white">
-                <span className="font-black italic text-5xl tracking-tighter drop-shadow-lg">PUMA</span>
-            </div>
-        )
+        linkText: "Read the story",
+        logo: () => <span className="font-bold tracking-wider text-xs lg:text-sm text-center">HIFI HYDRODIP</span>,
+        largeLogo: () => <span className="font-bold tracking-wider text-3xl text-white drop-shadow-lg">Hifi Hydrodip and chrome</span>
     },
     {
-        id: "tecovas",
-        quote: "Sanity has been a game-changer for our content velocity. We can deploy new campaigns in minutes rather than days.",
-        author: "Jane Smith",
-        role: "Marketing Director @ TECOVAS",
+        id: "milar",
+        quote: "EFIQ worked with us as a technology partner, mainly supporting the hardware side of the project. Their technical knowledge and support played an important role in getting the system working",
+        company: "Milar",
         image: "https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071&auto=format&fit=crop",
-        linkText: "Read the TECOVAS story",
-        logo: () => <span className="font-bold tracking-[0.2em] text-xs lg:text-sm">TECOVAS</span>,
-        largeLogo: () => <span className="font-bold tracking-[0.2em] text-3xl text-white drop-shadow-lg">TECOVAS</span>
+        linkText: "Read the story",
+        logo: () => <span className="font-bold tracking-[0.2em] text-xs lg:text-sm">MILAR</span>,
+        largeLogo: () => <span className="font-bold tracking-[0.2em] text-3xl text-white drop-shadow-lg">Milar</span>
     },
     {
-        id: "morningbrew",
-        quote: "Our editorial workflow is now lightning fast. The real-time collaboration features are essential for our daily newsletter operations.",
-        author: "Alex Johnson",
-        role: "Editorial Director @ Morning Brew",
+        id: "trinitas",
+        quote: "Our product development involves several technical components, and the technology partnership has been valuable in handling the technical side of the system.",
+        company: "Trinitas",
         image: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1974&auto=format&fit=crop",
-        linkText: "Read the Morning Brew story",
-        logo: () => (
-            <div className="flex items-center gap-2">
-                <FiCoffee className="w-4 h-4" />
-                <span className="font-bold text-[10px] lg:text-xs tracking-tight uppercase">Morning Brew Inc.</span>
-            </div>
-        ),
-        largeLogo: () => (
-            <div className="flex items-center gap-3 text-white drop-shadow-lg">
-                <FiCoffee className="w-10 h-10" />
-                <span className="font-bold text-2xl tracking-tight uppercase">Morning Brew Inc.</span>
-            </div>
-        )
+        linkText: "Read the story",
+        logo: () => <span className="font-bold tracking-[0.2em] text-xs lg:text-sm">TRINITAS</span>,
+        largeLogo: () => <span className="font-bold tracking-tight text-3xl text-white drop-shadow-lg">Trinitas</span>
     },
     {
-        id: "vercel",
-        quote: "Integrating Sanity with Next.js provides the best developer experience and performance out of the box.",
-        author: "Lee Robinson",
-        role: "VP Developer Experience @ Vercel",
+        id: "buzzkins",
+        quote: "The software solution developed based on our idea works well for our users. The system was built according to our requirements and performs exactly the way we expected.",
+        company: "Buzzkins",
         image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
-        linkText: "Read the Vercel story",
-        logo: () => (
-            <div className="flex items-center gap-1.5">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M12 2L24 22H0L12 2Z" /></svg>
-                <span className="font-bold text-sm lg:text-base tracking-tight">Vercel</span>
-            </div>
-        ),
-        largeLogo: () => (
-            <div className="flex items-center gap-3 text-white drop-shadow-lg">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10"><path d="M12 2L24 22H0L12 2Z" /></svg>
-                <span className="font-bold text-3xl tracking-tight">Vercel</span>
-            </div>
-        )
+        linkText: "Read the story",
+        logo: () => <span className="font-bold tracking-[0.2em] text-xs lg:text-sm">BUZZKINS</span>,
+        largeLogo: () => <span className="font-bold tracking-tight text-3xl text-white drop-shadow-lg">Buzzkins</span>
+    },
+    {
+        id: "ias",
+        quote: "They led the hardware R&D for our RC-based products, taking the development from initial concept to a functional system.",
+        company: "IAS Maritime models",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+        linkText: "Read the story",
+        logo: () => <span className="font-bold tracking-wider text-[10px] lg:text-xs text-center leading-tight">IAS MARITIME<br />MODELS</span>,
+        largeLogo: () => <span className="font-bold tracking-tight text-2xl lg:text-3xl text-white drop-shadow-lg">IAS Maritime models</span>
     }
 ];
 
@@ -122,7 +99,7 @@ export default function Testimonials() {
                 <div className="rounded-2xl overflow-hidden bg-[#16181d] border border-white/5 flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
 
                     {/* Image and Quote Section */}
-                    <div className="relative h-[200px] md:h-[240px] lg:h-[250px] bg-black overflow-hidden flex flex-col justify-end p-6 md:p-10">
+                    <div className="relative h-[180px] md:h-[220px] lg:h-[240px] bg-black overflow-hidden flex flex-col justify-end p-6 md:p-10">
                         <AnimatePresence mode="popLayout">
                             <motion.img
                                 key={activeTestimonial.id}
@@ -154,63 +131,50 @@ export default function Testimonials() {
                             </AnimatePresence>
                         </div>
 
-                        {/* Quote */}
-                        <div className="relative z-20 w-full max-w-[90%] md:max-w-[85%]">
-                            <AnimatePresence mode="wait">
-                                <motion.p
-                                    key={activeTestimonial.id}
-                                    initial={{ opacity: 0, y: 15 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -15 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="text-lg md:text-2xl font-medium leading-[1.3] text-white italic"
-                                >
-                                    "{activeTestimonial.quote}"
-                                </motion.p>
-                            </AnimatePresence>
+                        {/* Quote and Link container */}
+                        <div className="relative z-20 w-full mt-28 md:mt-36">
+                            <div className="w-full max-w-[90%] md:max-w-[85%] pr-20 md:pr-32 pb-2">
+                                <AnimatePresence mode="wait">
+                                    <motion.p
+                                        key={activeTestimonial.id}
+                                        initial={{ opacity: 0, y: 15 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -15 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="text-base md:text-xl font-medium leading-[1.4] text-white italic"
+                                    >
+                                        "{activeTestimonial.quote}"
+                                    </motion.p>
+                                </AnimatePresence>
+                            </div>
+
+                            <div className="absolute bottom-0 right-0">
+                                <AnimatePresence mode="wait">
+                                    <motion.a
+                                        key={activeTestimonial.id}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                        href="#"
+                                        className="flex items-center gap-1.5 text-white/90 font-medium text-[11px] md:text-sm hover:text-white transition-colors group shrink-0"
+                                    >
+                                        {activeTestimonial.linkText}
+                                        <FiArrowRight strokeWidth={2.5} size={14} className="group-hover:translate-x-1 transition-transform" />
+                                    </motion.a>
+                                </AnimatePresence>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Author and Link Bar */}
-                    <div className="relative z-20 flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-6 md:px-10 py-5 bg-[#1a1b20] border-b border-white/[0.03]">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={activeTestimonial.id}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="flex flex-col"
-                            >
-                                <span className="text-white/90 font-medium text-[13px] md:text-sm mb-0.5">{activeTestimonial.author}</span>
-                                <span className="text-white/50 text-[12px] md:text-xs">{activeTestimonial.role}</span>
-                            </motion.div>
-                        </AnimatePresence>
-
-                        <AnimatePresence mode="wait">
-                            <motion.a
-                                key={activeTestimonial.id}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                href="#"
-                                className="flex items-center gap-2 text-white font-semibold text-xs md:text-sm hover:text-white/80 transition-colors group shrink-0"
-                            >
-                                {activeTestimonial.linkText}
-                                <FiArrowRight strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
-                            </motion.a>
-                        </AnimatePresence>
-                    </div>
-
                     {/* Tabs / Logos Bar */}
-                    <div className="flex flex-wrap items-center gap-2 px-6 md:px-10 py-5 bg-[#1f2128]">
+                    <div className="flex flex-wrap items-center gap-2 px-6 md:px-10 py-3 bg-[#1f2128]">
                         {testimonials.map((t) => (
                             <button
                                 key={t.id}
                                 onClick={() => setActiveId(t.id)}
                                 className={`
-                                    flex items-center justify-center px-4 py-2.5 rounded-lg transition-all duration-300 min-w-[100px] lg:min-w-[120px]
+                                    flex items-center justify-center px-4 py-1.5 rounded-lg transition-all duration-300 min-w-[100px] lg:min-w-[120px]
                                     ${activeId === t.id
                                         ? 'bg-black text-white shadow-inner border border-white/10'
                                         : 'bg-transparent text-white/50 hover:text-white hover:bg-white/5'}
