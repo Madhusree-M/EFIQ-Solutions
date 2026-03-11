@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
+import Image from "next/image";
 import EfiqLogo from "./EfiqLogo";
 
 const navLinks = [
@@ -44,7 +45,8 @@ export default function Navbar() {
                     </div>
                 </Link>
 
-                <div className="hidden lg:flex items-center gap-8">
+
+                <div className="hidden lg:flex items-center justify-end gap-8">
                     {/* Solutions Dropdown */}
                     <div
                         className="group"
@@ -70,7 +72,13 @@ export default function Navbar() {
                                         {/* Card 1 */}
                                         <div className="bg-white/5 rounded-xl p-2.5 flex flex-col items-center w-[160px] group/card hover:bg-white/10 transition-colors border border-white/5 hover:border-white/20">
                                             <div className="relative w-full h-[120px] rounded-lg overflow-hidden">
-                                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" alt="Engineering" className="object-cover w-full h-full opacity-60 group-hover/card:opacity-100 transition-opacity duration-300" />
+                                                <Image
+                                                    src="/assets/Solutions image/Engineering solutions.jpg"
+                                                    alt="Engineering"
+                                                    fill
+                                                    sizes="160px"
+                                                    className="object-cover opacity-60 group-hover/card:opacity-100 transition-opacity duration-300"
+                                                />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3">
                                                     <span className="text-white font-bold text-sm text-center leading-tight">Engineering<br />Solutions</span>
                                                 </div>
@@ -80,7 +88,13 @@ export default function Navbar() {
                                         {/* Card 2 */}
                                         <div className="bg-white/5 rounded-xl p-2.5 flex flex-col items-center w-[160px] group/card hover:bg-white/10 transition-colors border border-white/5 hover:border-white/20">
                                             <div className="relative w-full h-[120px] rounded-lg overflow-hidden">
-                                                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop" alt="Robotics" className="object-cover w-full h-full opacity-60 group-hover/card:opacity-100 transition-opacity duration-300" />
+                                                <Image
+                                                    src="/assets/Solutions image/robotics.jpg"
+                                                    alt="Robotics"
+                                                    fill
+                                                    sizes="160px"
+                                                    className="object-cover opacity-60 group-hover/card:opacity-100 transition-opacity duration-300"
+                                                />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3">
                                                     <span className="text-white font-bold text-sm text-center leading-tight">Robotics &<br />Autonomous<br />Systems</span>
                                                 </div>
@@ -91,7 +105,13 @@ export default function Navbar() {
                                         <div className="bg-white/5 rounded-xl p-2.5 flex flex-col items-center w-[160px] group/card hover:bg-white/10 transition-colors border border-white/5 hover:border-white/20">
                                             <div className="relative w-full h-[120px] rounded-lg overflow-hidden">
                                                 <div className="absolute inset-0 bg-purple-900/40 mix-blend-overlay z-10 hidden group-hover/card:block"></div>
-                                                <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=2036&auto=format&fit=crop" alt="Research" className="object-cover w-full h-full opacity-60 group-hover/card:opacity-100 transition-opacity duration-300" />
+                                                <Image
+                                                    src="/assets/Solutions image/Research and Analysis.jpg"
+                                                    alt="Research"
+                                                    fill
+                                                    sizes="160px"
+                                                    className="object-cover opacity-60 group-hover/card:opacity-100 transition-opacity duration-300"
+                                                />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3 z-20">
                                                     <span className="text-white font-bold text-sm text-center leading-tight">Research &<br />Innovation</span>
                                                 </div>
@@ -101,7 +121,13 @@ export default function Navbar() {
                                         {/* Card 4 */}
                                         <div className="bg-white/5 rounded-xl p-2.5 flex flex-col items-center w-[160px] group/card hover:bg-white/10 transition-colors border border-white/5 hover:border-white/20">
                                             <div className="relative w-full h-[120px] rounded-lg overflow-hidden">
-                                                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop" alt="Custom Dev" className="object-cover w-full h-full opacity-60 group-hover/card:opacity-100 transition-opacity duration-300" />
+                                                <Image
+                                                    src="/assets/Solutions image/Custom engineering.jpg"
+                                                    alt="Custom Dev"
+                                                    fill
+                                                    sizes="160px"
+                                                    className="object-cover opacity-60 group-hover/card:opacity-100 transition-opacity duration-300"
+                                                />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3">
                                                     <span className="text-white font-bold text-sm text-center leading-tight">Custom<br />Technology<br />Development</span>
                                                 </div>
@@ -110,9 +136,15 @@ export default function Navbar() {
 
                                         {/* Card 5 - Others */}
                                         <div className="bg-white/5 rounded-xl p-2.5 flex flex-col items-center w-[160px] group/card hover:bg-white/10 transition-colors border border-white/5 hover:border-white/20">
-                                            <div className="relative w-full h-[120px] rounded-lg overflow-hidden bg-[#2a2a2e] flex items-center justify-center">
-                                                <svg className="w-5 h-5 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" /></svg>
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end justify-center pb-4">
+                                            <div className="relative w-full h-[120px] rounded-lg overflow-hidden">
+                                                <Image
+                                                    src="/assets/Solutions image/Others.jpg"
+                                                    alt="Others"
+                                                    fill
+                                                    sizes="160px"
+                                                    className="object-cover opacity-60 group-hover/card:opacity-100 transition-opacity duration-300"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3">
                                                     <span className="text-white font-bold text-sm text-center">Others</span>
                                                 </div>
                                             </div>
@@ -160,17 +192,19 @@ export default function Navbar() {
                     <Link href="#contact" className="text-white hover:text-[#22C55E] transition-colors duration-200 tracking-wide">
                         Contact
                     </Link>
+                    {/* CTA Button */}
+                    <div className="hidden lg:block">
+                        <a
+                            href="https://wa.me/918300380216"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-5 py-2 bg-[#22C55E] hover:bg-[#16a34a] text-black text-md font-bold rounded-md transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] whitespace-nowrap"
+                        >
+                            Talk to Expert
+                        </a>
+                    </div>
                 </div>
 
-                {/* CTA Button */}
-                <div className="hidden lg:block">
-                    <Link
-                        href="#contact"
-                        className="px-5 py-2 bg-[#22C55E] hover:bg-[#16a34a] text-black text-md font-bold rounded-md transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] whitespace-nowrap"
-                    >
-                        TALK TO EXPERT
-                    </Link>
-                </div>
 
                 {/* Mobile Hamburger */}
                 <button

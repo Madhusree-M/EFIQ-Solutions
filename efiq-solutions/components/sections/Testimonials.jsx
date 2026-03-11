@@ -2,47 +2,88 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight, FiCoffee } from "react-icons/fi";
+import Image from "next/image";
 
 const testimonials = [
     {
         id: "hifi",
         quote: "They built our developed custom software for our operations. The solution worked exactly as we expected and made a big difference in our day-to-day work.",
         company: "Hifi Hydrodip and chrome",
-        image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop",
-        logo: ({ active }) => <img src="/assets/Company-Logos/Hifi%20Hydrodip.png" alt="Hifi Hydrodip" className={`h-14 md:h-20 w-auto object-contain brightness-0 invert transition-all duration-300 ${active ? 'opacity-100 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`} />,
-        largeLogo: () => <img src="/assets/Company-Logos/Hifi%20Hydrodip.png" alt="Hifi Hydrodip" className="h-28 md:h-40 w-auto object-contain brightness-0 invert drop-shadow-2xl" />
+        image: "/assets/Final Testimonials/Hifi Hydrodip.png",
+        logo: ({ active }) => (
+            <div className={`relative h-14 md:h-20 w-32 md:w-40 transition-all duration-300 ${active ? 'opacity-100 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}>
+                <Image src="/assets/Company-Logos/Hifi Hydrodip.png" alt="Hifi Hydrodip" fill className="object-contain brightness-0 invert" sizes="(max-width: 768px) 128px, 160px" />
+            </div>
+        ),
+        largeLogo: () => (
+            <div className="relative h-28 md:h-40 w-56 md:w-80">
+                <Image src="/assets/Company-Logos/Hifi Hydrodip.png" alt="Hifi Hydrodip" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 224px, 320px" />
+            </div>
+        )
     },
     {
         id: "milar",
         quote: "EFIQ worked with us as a technology partner, mainly supporting the hardware side of the project. Their technical knowledge and support played an important role in getting the system working",
         company: "Milar",
-        image: "https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071&auto=format&fit=crop",
-        logo: ({ active }) => <img src="/assets/Company-Logos/Milar.png" alt="Milar" className={`h-14 md:h-20 w-auto object-contain brightness-0 invert transition-all duration-300 ${active ? 'opacity-100 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`} />,
-        largeLogo: () => <img src="/assets/Company-Logos/Milar.png" alt="Milar" className="h-28 md:h-40 w-auto object-contain brightness-0 invert drop-shadow-2xl" />
+        image: "/assets/Final Testimonials/Milar.png",
+        logo: ({ active }) => (
+            <div className={`relative h-14 md:h-20 w-32 md:w-40 transition-all duration-300 ${active ? 'opacity-100 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}>
+                <Image src="/assets/Company-Logos/Milar.png" alt="Milar" fill className="object-contain brightness-0 invert" sizes="(max-width: 768px) 128px, 160px" />
+            </div>
+        ),
+        largeLogo: () => (
+            <div className="relative h-28 md:h-40 w-56 md:w-80">
+                <Image src="/assets/Company-Logos/Milar.png" alt="Milar" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 224px, 320px" />
+            </div>
+        )
     },
     {
         id: "trinitas",
         quote: "Our product development involves several technical components, and the development work was managed effectively throughout the project. The system was built according to the required specifications, and the overall progress of the development remained consistent and well structured",
         company: "Trinitas",
-        image: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1974&auto=format&fit=crop",
-        logo: ({ active }) => <img src="/assets/Company-Logos/Trinitas.png" alt="Trinitas" className={`h-14 md:h-20 w-auto object-contain brightness-0 invert transition-all duration-300 ${active ? 'opacity-100 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`} />,
-        largeLogo: () => <img src="/assets/Company-Logos/Trinitas.png" alt="Trinitas" className="h-28 md:h-40 w-auto object-contain brightness-0 invert drop-shadow-2xl" />
+        image: "/assets/Final Testimonials/Trinitas.png",
+        logo: ({ active }) => (
+            <div className={`relative h-14 md:h-20 w-32 md:w-40 transition-all duration-300 ${active ? 'opacity-100 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}>
+                <Image src="/assets/Company-Logos/Trinitas.png" alt="Trinitas" fill className="object-contain brightness-0 invert" sizes="(max-width: 768px) 128px, 160px" />
+            </div>
+        ),
+        largeLogo: () => (
+            <div className="relative h-28 md:h-40 w-56 md:w-80">
+                <Image src="/assets/Company-Logos/Trinitas.png" alt="Trinitas" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 224px, 320px" />
+            </div>
+        )
     },
     {
         id: "buzzkins",
         quote: "The software solution developed based on our idea works well for our users. The system was built according to our requirements and performs exactly the way we expected.",
         company: "Buzzkins",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
-        logo: ({ active }) => <img src="/assets/Company-Logos/Buzzkins.png" alt="Buzzkins" className={`h-14 md:h-30 w-auto object-contain brightness-0 invert transition-all duration-300 ${active ? 'opacity-100 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`} />,
-        largeLogo: () => <img src="/assets/Company-Logos/Buzzkins.png" alt="Buzzkins" className="h-28 md:h-40 w-auto object-contain brightness-0 invert drop-shadow-2xl" />
+        image: "/assets/Final Testimonials/Buzzkins.png",
+        logo: ({ active }) => (
+            <div className={`relative h-14 md:h-30 w-32 md:w-48 transition-all duration-300 ${active ? 'opacity-100 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}>
+                <Image src="/assets/Company-Logos/Buzzkins.png" alt="Buzzkins" fill className="object-contain brightness-0 invert" sizes="(max-width: 768px) 128px, 192px" />
+            </div>
+        ),
+        largeLogo: () => (
+            <div className="relative h-28 md:h-40 w-56 md:w-80">
+                <Image src="/assets/Company-Logos/Buzzkins.png" alt="Buzzkins" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 224px, 320px" />
+            </div>
+        )
     },
     {
         id: "ias",
         quote: "We have worked together on multiple projects, and the technical execution has always been handled with professionalism and clarity. The team ensured that all deliverables were completed according to the project requirements and timelines, showing strong commitment and technical expertise.",
         company: "IAS Maritime models",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
-        logo: ({ active }) => <img src="/assets/Company-Logos/Astredge.png" alt="Astredge" className={`h-14 md:h-20 w-auto object-contain brightness-0 invert transition-all duration-300 ${active ? 'opacity-100 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`} />,
-        largeLogo: () => <img src="/assets/Company-Logos/Astredge.png" alt="Astredge" className="h-28 md:h-40 w-auto object-contain brightness-0 invert drop-shadow-2xl" />
+        image: "/assets/Final Testimonials/Astredge.png",
+        logo: ({ active }) => (
+            <div className={`relative h-14 md:h-20 w-32 md:w-40 transition-all duration-300 ${active ? 'opacity-100 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}>
+                <Image src="/assets/Company-Logos/Astredge.png" alt="Astredge" fill className="object-contain brightness-0 invert" sizes="(max-width: 768px) 128px, 160px" />
+            </div>
+        ),
+        largeLogo: () => (
+            <div className="relative h-28 md:h-40 w-56 md:w-80">
+                <Image src="/assets/Company-Logos/Astredge.png" alt="Astredge" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 224px, 320px" />
+            </div>
+        )
     }
 ];
 
@@ -89,15 +130,22 @@ export default function Testimonials() {
                         {/* Image and Quote Section */}
                         <div className="relative h-[300px] md:h-[340px] lg:h-[380px] bg-black overflow-hidden flex flex-col justify-end p-6 md:p-10">
                             <AnimatePresence mode="popLayout">
-                                <motion.img
+                                <motion.div
                                     key={activeTestimonial.id}
-                                    src={activeTestimonial.image}
                                     initial={{ opacity: 0, scale: 1.05 }}
                                     animate={{ opacity: 0.6, scale: 1 }}
                                     exit={{ opacity: 0 }}
                                     transition={{ duration: 0.5, ease: "easeOut" }}
-                                    className="absolute inset-0 w-full h-full object-cover mix-blend-screen"
-                                />
+                                    className="absolute inset-0 w-full h-full mix-blend-screen"
+                                >
+                                    <Image
+                                        src={activeTestimonial.image}
+                                        alt={activeTestimonial.company}
+                                        fill
+                                        className="object-cover"
+                                        priority
+                                    />
+                                </motion.div>
                             </AnimatePresence>
 
                             {/* Gradients */}

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const products = [
     {
@@ -55,11 +56,13 @@ export default function Products() {
                             className="group flex flex-col rounded-2xl overflow-hidden bg-[#1a1a1a]"
                         >
                             {/* Image Area */}
-                            <div className="w-full aspect-square bg-[#111111] flex items-center justify-center p-2 overflow-hidden border-b border-white/5">
-                                <img
+                            <div className="w-full aspect-square bg-[#111111] relative p-2 overflow-hidden border-b border-white/5">
+                                <Image
                                     src={product.imgSrc}
                                     alt={product.name}
-                                    className="w-full h-full object-contain grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                                    fill
+                                    className="object-contain grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                 />
                             </div>
 

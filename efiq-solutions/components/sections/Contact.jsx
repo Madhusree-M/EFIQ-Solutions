@@ -9,6 +9,23 @@ export default function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
+        // Construct the WhatsApp message
+        const message = `Name: ${form.name}
+Email: ${form.email}
+Company: ${form.company}
+Phone: ${form.phone}
+Message: ${form.message}`;
+
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // WhatsApp URL
+        const whatsappUrl = `https://wa.me/918300380216?text=${encodedMessage}`;
+        
+        // Open WhatsApp in a new window
+        window.open(whatsappUrl, '_blank');
+
         setSubmitted(true);
         setTimeout(() => setSubmitted(false), 3000);
     };
