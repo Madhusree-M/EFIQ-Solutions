@@ -21,9 +21,14 @@ export default function FinalCTA() {
                     </p>
 
                     {/* CTA Button */}
-                    <button className="px-8 py-3 bg-[#1f1f1f] text-white text-sm font-semibold rounded-lg border-2 border-[#16a34a] hover:bg-[#16a34a] transition-colors duration-300">
+                    <a
+                        href="https://wa.me/918300380216"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-8 py-3 bg-[#1f1f1f] text-white text-sm font-semibold rounded-lg border-2 border-[#16a34a] hover:bg-[#16a34a] transition-colors duration-300"
+                    >
                         Start now
-                    </button>
+                    </a>
 
                 </div>
             </div>

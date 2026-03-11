@@ -38,23 +38,23 @@ export default function Footer() {
                             <h3 className="text-white text-base font-bold mb-6">Other Links</h3>
                             <div className="flex items-center gap-6">
 
-                                <a href="https://efiqsolutions.com/" target="_blank" rel="noopener noreferrer">
-                                        <Image 
-                                            src="/assets/EFIQ-SVG/EFIQ Logo SVG White.svg" 
-                                            alt="EFIQ Logo" 
-                                            width={180} 
-                                            height={60} 
-                                            className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" 
-                                        />
+                                <a href="https://web.efiqsolutions.com/" target="_blank" rel="noopener noreferrer">
+                                    <Image
+                                        src="/assets/EFIQ-SVG/EFIQ Logo SVG White.svg"
+                                        alt="EFIQ Logo"
+                                        width={180}
+                                        height={60}
+                                        className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                                    />
                                 </a>
                                 <a href="https://efiqone.com/" target="_blank" rel="noopener noreferrer">
-                                        <Image 
-                                            src="/assets/EFIQONE-SVG/EFIQ one logo white.svg" 
-                                            alt="EFIQ One Logo" 
-                                            width={180} 
-                                            height={60} 
-                                            className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" 
-                                        />
+                                    <Image
+                                        src="/assets/EFIQONE-SVG/EFIQ one logo white.svg"
+                                        alt="EFIQ One Logo"
+                                        width={180}
+                                        height={60}
+                                        className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                                    />
                                 </a>
                             </div>
                         </div>
@@ -68,7 +68,7 @@ export default function Footer() {
                                 {["About", "Contact", "Careers", "Newsletter"].map((link) => (
                                     <li key={link}>
                                         <Link
-                                            href={link === "About" ? "/about" : link === "Careers" ? "/career_efiqsolutions" : link === "Newsletter" ? "/newsletter_efiqsolutions" : "#"}
+                                            href={link === "About" ? "/about" : link === "Contact" ? "/#contact" : link === "Careers" ? "/career_efiqsolutions" : link === "Newsletter" ? "/newsletter_efiqsolutions" : "#"}
                                             className="text-white/90 text-sm hover:text-[#22C55E] transition-colors font-medium"
                                         >
                                             {link}
