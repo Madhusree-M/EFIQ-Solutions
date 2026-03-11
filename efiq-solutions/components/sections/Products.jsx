@@ -61,7 +61,7 @@ export default function Products() {
                                     src={product.imgSrc}
                                     alt={product.name}
                                     fill
-                                    className="object-contain grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                                    className="object-center group-hover:scale-105 transition-all duration-700 ease-in-out"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                 />
                             </div>

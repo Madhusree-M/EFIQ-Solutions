@@ -54,8 +54,8 @@ export default function ClientLogos() {
 
     return (
         <section className="bg-black border-b border-white/5 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-2">
-                <p className="text-center text-white/30 text-xs uppercase tracking-widest">
+            <div className="max-w-7xl mx-auto px-">
+                <p className="text-center text-white/30 text-xs uppercase tracking-widest py-4">
                     We are proud to work with
                 </p>
                 <div className="relative">
@@ -89,10 +89,7 @@ export default function ClientLogos() {
                                     <img
                                         src={logo.src}
                                         alt={logo.name}
-                                        className={`h-26 md:h-50 w-auto object-contain transition-all duration-300 ${centerIndex === i
-                                            ? "opacity-100 filter-none duration-300"
-                                            : "opacity-40 filter grayscale scale-100 hover:opacity-100 hover:filter-none hover:scale-110"
-                                            }`}
+                                        className={`h-26 md:h-50 w-auto object-contain transition-all duration-300 opacity-60 filter grayscale scale-100 hover:opacity-100 hover:filter-none hover:scale-110`}
                                     />
                                 </motion.div>
                             ))}

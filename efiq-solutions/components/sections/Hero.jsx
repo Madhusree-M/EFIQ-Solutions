@@ -6,7 +6,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="relative flex-1 flex flex-col bg-black w-full"
+            className="relative flex-1 flex flex-col bg-gray-900 w-full"
         >
             {/* Interstellar Animated Background */}
             {/* <Starfield /> */}
@@ -15,18 +15,18 @@ export default function Hero() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_10%,_black_90%)] z-0" />
 
             {/* Subtle Blue glow top-left accent */}
-            <div className="absolute top-0 left-0 w-[800px] h-[400px] bg-[#0A84FF]/10 rounded-full blur-[150px] z-0 pointer-events-none" />
+            {/* <div className="absolute top-0 left-0 w-[800px] h-[400px] bg-[#0A84FF]/10 rounded-full blur-[150px] z-0 pointer-events-none" /> */}
 
             {/* Content */}
             <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-6 flex items-center justify-start">
 
                 {/* Left Side: Text Content */}
-                <div className="w-full lg:w-1/2 text-left z-20 flex flex-col justify-center pt-20 lg:pt-32 pb-10 lg:pb-0">
+                <div className="leading-1 w-full lg:w-1/2 text-left z-20 flex flex-col justify-center pt-20 lg:pt-32 pb-10 lg:pb-0">
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="text-5xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider text-white mb-6 drop-shadow-lg"
+                        className="text-5xl md:text-5xl lg:text-6xl font-bold leading-relaxed text-white mb-6 drop-shadow-lg"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         <span className="whitespace-nowrap">Innovative Technology.</span>
