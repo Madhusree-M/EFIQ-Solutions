@@ -8,7 +8,7 @@ const testimonials = [
     {
         id: "hifi",
         quote: "They built our developed custom software for our operations. The solution worked exactly as we expected and made a big difference in our day-to-day work.",
-        company: "Hifi Hydrodip and chrome",
+        company: "Hifi Hydrodip",
         image: "/assets/Final Testimonials/Hifi Hydrodip.png",
         logo: ({ active }) => (
             <div className={`relative h-14 md:h-20 w-32 md:w-40 transition-all duration-300 ${active ? 'opacity-100 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}>
@@ -16,8 +16,8 @@ const testimonials = [
             </div>
         ),
         largeLogo: () => (
-            <div className="relative h-28 md:h-40 w-56 md:w-80">
-                <Image src="/assets/Company-Logos/Hifi Hydrodip.png" alt="Hifi Hydrodip" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 224px, 320px" />
+            <div className="relative h-40 md:h-64 w-80 md:w-[450px]">
+                <Image src="/assets/Company-Logos/Hifi Hydrodip.png" alt="Hifi Hydrodip" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 320px, 450px" />
             </div>
         )
     },
@@ -32,8 +32,8 @@ const testimonials = [
             </div>
         ),
         largeLogo: () => (
-            <div className="relative h-28 md:h-40 w-56 md:w-80">
-                <Image src="/assets/Company-Logos/Milar.png" alt="Milar" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 224px, 320px" />
+            <div className="relative h-40 md:h-64 w-80 md:w-[450px]">
+                <Image src="/assets/Company-Logos/Milar.png" alt="Milar" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 320px, 450px" />
             </div>
         )
     },
@@ -48,8 +48,8 @@ const testimonials = [
             </div>
         ),
         largeLogo: () => (
-            <div className="relative h-28 md:h-40 w-56 md:w-80">
-                <Image src="/assets/Company-Logos/Trinitas.png" alt="Trinitas" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 224px, 320px" />
+            <div className="relative h-40 md:h-64 w-80 md:w-[450px]">
+                <Image src="/assets/Company-Logos/Trinitas.png" alt="Trinitas" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 320px, 450px" />
             </div>
         )
     },
@@ -64,15 +64,15 @@ const testimonials = [
             </div>
         ),
         largeLogo: () => (
-            <div className="relative h-28 md:h-40 w-56 md:w-80">
-                <Image src="/assets/Company-Logos/Buzzkins.png" alt="Buzzkins" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 224px, 320px" />
+            <div className="relative h-40 md:h-64 w-80 md:w-[450px]">
+                <Image src="/assets/Company-Logos/Buzzkins.png" alt="Buzzkins" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 320px, 450px" />
             </div>
         )
     },
     {
         id: "ias",
         quote: "We have worked together on multiple projects, and the technical execution has always been handled with professionalism and clarity. The team ensured that all deliverables were completed according to the project requirements and timelines, showing strong commitment and technical expertise.",
-        company: "IAS Maritime models",
+        company: "Astredge",
         image: "/assets/Final Testimonials/Astredge.png",
         logo: ({ active }) => (
             <div className={`relative h-14 md:h-20 w-32 md:w-40 transition-all duration-300 ${active ? 'opacity-100 scale-110' : 'opacity-60 hover:opacity-100 hover:scale-105'}`}>
@@ -80,8 +80,8 @@ const testimonials = [
             </div>
         ),
         largeLogo: () => (
-            <div className="relative h-28 md:h-40 w-56 md:w-80">
-                <Image src="/assets/Company-Logos/Astredge.png" alt="Astredge" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 224px, 320px" />
+            <div className="relative h-40 md:h-64 w-80 md:w-[450px]">
+                <Image src="/assets/Company-Logos/Astredge.png" alt="Astredge" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 320px, 450px" />
             </div>
         )
     }
@@ -153,7 +153,7 @@ export default function Testimonials() {
                             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"></div>
 
                             {/* Large Logo Top Left */}
-                            <div className="absolute top-4 left-4 z-20">
+                            <div className="absolute top-0 left-0 z-20">
                                 <AnimatePresence mode="wait">
                                     <motion.div
                                         key={activeTestimonial.id}
