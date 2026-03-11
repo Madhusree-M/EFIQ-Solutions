@@ -9,7 +9,7 @@ export default function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         // Construct the WhatsApp message
         const message = `Name: ${form.name}
 Email: ${form.email}
@@ -19,10 +19,10 @@ Message: ${form.message}`;
 
         // Encode message for URL
         const encodedMessage = encodeURIComponent(message);
-        
+
         // WhatsApp URL
         const whatsappUrl = `https://wa.me/918300380216?text=${encodedMessage}`;
-        
+
         // Open WhatsApp in a new window
         window.open(whatsappUrl, '_blank');
 
@@ -85,7 +85,7 @@ Message: ${form.message}`;
                                 { icon: FiMail, label: "For General Inquiry", value: "hello@efiqsolutions.com", color: "#0A84FF" },
                                 { icon: FiMail, label: "For Support", value: "support@efiqsolutions.com", color: "#0A84FF" },
                                 { icon: FiPhone, label: "Call Us", value: "+91 83003 80216", color: "#22C55E" },
-                                { icon: FiMapPin, label: "Hub Location", value: "Innovation District, Silicon Valley, CA", color: "#0A84FF" },
+                                { icon: FiMapPin, label: "Hub Location", value: "7/210 - 1, Yellow City, Paramakudi. Tamil Nadu, 623701.", color: "#0A84FF" },
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
@@ -106,36 +106,39 @@ Message: ${form.message}`;
                         Instagram , Linked in , X , Youtube
                         */}
                         <div className="flex gap-4">
-                            <motion.a
-                                whileHover={{ scale: 1.1 }}
-                                href="#"
-                                className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#0A84FF]/40 transition-all duration-300"
-                            >
-                                <FiInstagram size={20} className="text-white group-hover:text-[#0A84FF] transition-colors" />
-                            </motion.a>
-                            <motion.a
-                                whileHover={{ scale: 1.1 }}
-                                href="#"
-                                className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#0A84FF]/40 transition-all duration-300"
-                            >
-                                <FiLinkedin size={20} className="text-white group-hover:text-[#0A84FF] transition-colors" />
-                            </motion.a>
-                            <motion.a
-                                whileHover={{ scale: 1.1 }}
-                                href="#"
-                                className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#0A84FF]/40 transition-all duration-300"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
-                                    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
-                                </svg>
-                            </motion.a>
-                            <motion.a
-                                whileHover={{ scale: 1.1 }}
-                                href="#"
-                                className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#0A84FF]/40 transition-all duration-300"
-                            >
-                                <FiYoutube size={20} className="text-white group-hover:text-[#0A84FF] transition-colors" />
-                            </motion.a>
+                            {[
+                                { icon: FiLinkedin, name: "LinkedIn", href: "https://www.linkedin.com/company/efiqsolutions/" },
+                                { icon: FiInstagram, name: "Instagram", href: "https://www.instagram.com/efiq_solutions/" },
+                                { icon: FiYoutube, name: "YouTube", href: "https://www.youtube.com/@EFIQ_Solutions" },
+                                {
+                                    icon: () => (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
+                                            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                                        </svg>
+                                    ),
+                                    name: "X",
+                                    href: "https://x.com/EFIQ_Solutions/"
+                                }
+                            ].map((social, idx) => (
+                                <div key={idx} className="relative group/social">
+                                    <motion.a
+                                        whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+                                        href={social.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300 group-hover/social:border-[#0A84FF]/40 group-hover/social:shadow-[0_0_15px_rgba(10,132,255,0.2)]"
+                                    >
+                                        {typeof social.icon === 'function' ? <social.icon /> : <social.icon size={20} className="text-white group-hover/social:text-[#0A84FF] transition-colors" />}
+                                    </motion.a>
+
+                                    {/* Tooltip */}
+                                    <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-white text-black text-[11px] font-bold rounded shadow-lg opacity-0 group-hover/social:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-20">
+                                        {social.name}
+                                        {/* Tooltip arrow */}
+                                        <div className="absolute -top-1 left-1/2 -translate-x-1/2 border-l-4 border-l-transparent border-r-4 border-r-transparent border-bottom-4 border-bottom-white"></div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </motion.div>
 
