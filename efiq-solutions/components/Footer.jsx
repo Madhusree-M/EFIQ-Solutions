@@ -51,7 +51,7 @@ export default function Footer() {
                                 {["About", "Contact", "Careers", "Newsletter"].map((link) => (
                                     <li key={link}>
                                         <Link
-                                            href={link === "About" ? "/about" : "#"}
+                                            href={link === "About" ? "/about" : link === "Careers" ? "/career_efiqsolutions" : link === "Newsletter" ? "/newsletter_efiqsolutions" : "#"}
                                             className="text-white/90 text-sm hover:text-[#22C55E] transition-colors font-medium"
                                         >
                                             {link}

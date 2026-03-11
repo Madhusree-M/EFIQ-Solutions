@@ -92,12 +92,6 @@ export default function AboutPage() {
                         </div>
                     </motion.div>
 
-                    {/* Meta Info */}
-                    <div className="mt-12 flex flex-col items-center gap-2 text-white/30 text-sm italic">
-                        <span>About</span>
-                        <span className="hover:text-white/50 transition-colors cursor-pointer">efiqsolutions.com/about_efiqsolutions</span>
-                    </div>
-
                 </div>
             </div>
 

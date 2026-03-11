@@ -149,8 +149,8 @@ export default function Navbar() {
                                 >
                                     <div className="bg-[#16181d] rounded-xl p-2 shadow-2xl border border-white/10 flex flex-col overflow-hidden">
                                         <Link href="/about" className="px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all">About Us</Link>
-                                        <Link href="#careers" className="px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all">Careers</Link>
-                                        <Link href="#newsletter" className="px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all">Newsletter</Link>
+                                        <Link href="/career_efiqsolutions" className="px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all">Careers</Link>
+                                        <Link href="/newsletter_efiqsolutions" className="px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all">Newsletter</Link>
                                     </div>
                                 </motion.div>
                             )}
@@ -194,13 +194,40 @@ export default function Navbar() {
                         <ul className="flex flex-col px-6 py-4 gap-4">
                             {navLinks.map((link) => (
                                 <li key={link.label}>
-                                    <Link
-                                        href={link.href}
-                                        onClick={() => setMenuOpen(false)}
-                                        className="text-white/80 hover:text-white text-sm tracking-wide block py-1"
-                                    >
-                                        {link.label}
-                                    </Link>
+                                    {link.label === "Company" ? (
+                                        <div className="flex flex-col gap-2">
+                                            <span className="text-white/40 text-[10px] uppercase tracking-widest font-bold ml-1">Company</span>
+                                            <Link
+                                                href="/about"
+                                                onClick={() => setMenuOpen(false)}
+                                                className="text-white/80 hover:text-white text-sm tracking-wide block py-1 pl-2 border-l border-white/10"
+                                            >
+                                                About Us
+                                            </Link>
+                                            <Link
+                                                href="/career_efiqsolutions"
+                                                onClick={() => setMenuOpen(false)}
+                                                className="text-white/80 hover:text-white text-sm tracking-wide block py-1 pl-2 border-l border-white/10"
+                                            >
+                                                Careers
+                                            </Link>
+                                            <Link
+                                                href="/newsletter_efiqsolutions"
+                                                onClick={() => setMenuOpen(false)}
+                                                className="text-white/80 hover:text-white text-sm tracking-wide block py-1 pl-2 border-l border-white/10"
+                                            >
+                                                Newsletter
+                                            </Link>
+                                        </div>
+                                    ) : (
+                                        <Link
+                                            href={link.href}
+                                            onClick={() => setMenuOpen(false)}
+                                            className="text-white/80 hover:text-white text-sm tracking-wide block py-1"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    )}
                                 </li>
                             ))}
                             <li>
