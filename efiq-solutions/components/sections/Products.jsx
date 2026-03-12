@@ -45,7 +45,7 @@ export default function Products() {
                 </div>
 
                 {/* Product Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
                     {products.map((product, i) => (
                         <motion.div
                             key={i}
@@ -67,14 +67,14 @@ export default function Products() {
                             </div>
 
                             {/* Content Area */}
-                            <div className="p-6 flex-grow flex flex-col">
+                            <div className="p-3 md:p-6 flex-grow flex flex-col">
                                 <h3
-                                    className="text-white font-bold text-xl mb-3 tracking-widest uppercase"
+                                    className="text-white font-bold text-[10px] md:text-xl mb-1 md:mb-3 tracking-widest uppercase leading-tight"
                                     style={{ fontFamily: "'Orbitron', sans-serif" }}
                                 >
                                     {product.name}
                                 </h3>
-                                <p className="text-white/80 text-sm md:text-base leading-relaxed font-normal font-manrope">
+                                <p className="text-white/70 text-[10px] md:text-base leading-relaxed font-normal font-manrope">
                                     {product.desc}
                                 </p>
                             </div>

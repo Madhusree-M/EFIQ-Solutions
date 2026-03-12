@@ -3,8 +3,99 @@ import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin, FiSend, FiCheck, FiInstagram, FiLinkedin, FiX, FiYoutube, FiTwitter } from "react-icons/fi";
 import { useState } from "react";
 
+/* ─── Privacy Policy Modal ──────────────────────────────────── */
+function PrivacyPolicyModal({ onClose }) {
+    return (
+        <div
+            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/75 backdrop-blur-sm px-4"
+            onClick={onClose}
+        >
+            <div
+                className="relative bg-[#1a1a1a] rounded-2xl w-full max-w-2xl max-h-[85vh] flex flex-col shadow-2xl border border-[#0A84FF]/50"
+                onClick={(e) => e.stopPropagation()}
+            >
+                {/* Modal Header */}
+                <div className="flex items-center justify-between px-8 pt-7 pb-4 border-b border-white/10 shrink-0">
+                    <h2 className="text-xl font-bold text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                        Privacy Policy
+                    </h2>
+                    <button
+                        onClick={onClose}
+                        className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/70 hover:text-white hover:border-white transition-colors text-sm font-medium"
+                    >
+                        ✕
+                    </button>
+                </div>
+
+                {/* Modal Body */}
+                <div className="overflow-y-auto px-8 py-6 space-y-6 text-[15px] leading-relaxed text-[#c8c8c8] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-500 [&::-webkit-scrollbar-track]:bg-transparent" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                    <p>At EFIQ Solutions, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data.</p>
+
+                    <section>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">1. Overview:</h3>
+                        <p>At EFIQ Solutions, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data.</p>
+                    </section>
+
+                    <section>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">2. Information We Collect:</h3>
+                        <p><span className="text-white font-semibold">Personal Info:</span> Name, email, phone number, company details, etc., voluntarily provided via forms or direct contact.</p>
+                        <p className="mt-2"><span className="text-white font-semibold">Usage Data:</span> Pages visited, IP address, device info, time spent, etc.</p>
+                        <p className="mt-2"><span className="text-white font-semibold">Uploaded Content:</span> Temporarily stored content used for preview or project purposes (e.g., videos, documents, or creative assets).</p>
+                    </section>
+
+                    <section>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">3. How We Use Your Information:</h3>
+                        <ul className="list-disc pl-5 space-y-1">
+                            <li>To provide and improve our services</li>
+                            <li>To contact you regarding inquiries or projects</li>
+                            <li>For internal record keeping and analytics</li>
+                            <li>To comply with legal obligations</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">4. Data Retention:</h3>
+                        <p>We retain user data only for as long as necessary to provide our services. For services like file uploads in contact page/Mocksify, uploaded files are stored temporarily unless explicitly saved.</p>
+                    </section>
+
+                    <section>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">5. Cookies:</h3>
+                        <p>We may use cookies to enhance user experience and gather analytics. You can modify your browser settings to disable cookies if you prefer.</p>
+                    </section>
+
+                    <section>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">6. Sharing of Information:</h3>
+                        <p>We do not sell or rent personal data to third parties. Data may be shared with trusted partners for service delivery, bound by confidentiality agreements.</p>
+                    </section>
+
+                    <section>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">7. Data Security:</h3>
+                        <p>We implement reasonable physical, digital, and managerial procedures to safeguard your data.</p>
+                    </section>
+
+                    <section>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">8. Your Rights:</h3>
+                        <p>You have the right to request access, correction, or deletion of your personal data by contacting us.</p>
+                    </section>
+
+                    <section>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">9. Updates to Policy:</h3>
+                        <p>This Privacy Policy may be updated periodically. Continued use of the site constitutes acceptance of the changes.</p>
+                    </section>
+
+                    <section>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">10. Contact:</h3>
+                        <p>If you have questions about this policy, contact us at: <a href="mailto:support@efiqsolutions.com" className="text-primary hover:underline font-medium">support@efiqsolutions.com</a></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    );
+}
+
 export default function Contact() {
     const [form, setForm] = useState({ name: "", email: "", company: "", phone: "", message: "" });
+    const [showPrivacy, setShowPrivacy] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -49,6 +140,8 @@ export default function Contact() {
     };
 
     return (
+        <>
+        {showPrivacy && <PrivacyPolicyModal onClose={() => setShowPrivacy(false)} />}
         <section id="contact" className="py-24 bg-black relative overflow-hidden" style={{ fontFamily: "'Manrope', sans-serif" }}>
             {/* Mesh Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -259,7 +352,7 @@ export default function Contact() {
                                             <FiCheck size={12} className="absolute inset-0 m-auto text-white opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity" />
                                         </div>
                                         <label htmlFor="privacy" className="text-white/60 text-[13px] md:text-sm cursor-pointer select-none leading-relaxed">
-                                            I&apos;d like to receive more information about company. I understand and agree to the <br></br> <a href="/PrivacyPolicy" className="text-[#0A84FF] hover:underline transition-all" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                                            I&apos;d like to receive more information about company. I understand and agree to the <br></br> <button type="button" onClick={() => setShowPrivacy(true)} className="text-[#0A84FF] hover:underline transition-all font-medium">Privacy Policy</button>
                                         </label>
                                     </div>
 
@@ -293,5 +386,6 @@ export default function Contact() {
                 </div>
             </div>
         </section>
+        </>
     );
 }
