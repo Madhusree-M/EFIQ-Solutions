@@ -8,6 +8,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                primary: "var(--primary)",
+                secondary: "var(--secondary)",
+                tertiary: "var(--tertiary)",
                 "brand-blue": "#0A84FF",
                 "brand-green": "#22C55E",
                 "dark-card": "#0d0d0d",

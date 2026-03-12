@@ -8,10 +8,10 @@ import EfiqLogo from "@/components/EfiqLogo";
 
 export default function AboutPage() {
     return (
-        <main className="bg-black min-h-screen text-white selection:bg-[#22C55E]/30" style={{ fontFamily: "'Manrope', sans-serif" }}>
+        <main className="bg-black min-h-screen text-white selection:bg-secondary/30" style={{ fontFamily: "'Manrope', sans-serif" }}>
             <Navbar />
 
-            <div className="pt-32 pb-24 px-6">
+            <div className="pt-24 pb-24 px-6">
                 <div className="max-w-4xl mx-auto">
 
                     {/* Back Button */}
@@ -19,7 +19,7 @@ export default function AboutPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="mb-12"
+                        className="mb-6"
                     >
                         <Link
                             href="/"
@@ -35,7 +35,7 @@ export default function AboutPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-5xl md:text-7xl font-black text-white mb-16 tracking-tight"
+                        className="text-5xl md:text-7xl font-black text-white mb-10 tracking-tight uppercase"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         ABOUT US
@@ -46,12 +46,12 @@ export default function AboutPage() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative rounded-[32px] border border-[#0A84FF]/30 bg-[#16181d]/50 backdrop-blur-xl p-8 md:p-16 overflow-hidden shadow-[0_0_50px_rgba(10,132,255,0.1)]"
+                        className="relative rounded-[32px] border border-gray-700 bg-[#16181d]/50 backdrop-blur-xl p-8 md:p-12 overflow-hidden shadow-[0_0_50px_rgba(10,132,255,0.1)]"
                     >
                         {/* EFIQ Logo in Center */}
                         <div className="flex justify-center mb-16">
                             <div className="w-64 md:w-80 h-32 md:h-40 relative group">
-                                <div className="absolute inset-0 bg-[#22C55E]/5 blur-3xl rounded-full group-hover:bg-[#22C55E]/10 transition-colors duration-500"></div>
+                                <div className="absolute inset-0 bg-secondary/5 blur-3xl rounded-full group-hover:bg-secondary/10 transition-colors duration-500"></div>
                                 <EfiqLogo phase="static" className="relative z-10" />
                             </div>
                         </div>
@@ -84,7 +84,7 @@ export default function AboutPage() {
                         <div className="mt-16 flex justify-center">
                             <Link
                                 href="/#contact"
-                                className="px-10 py-4 bg-[#22C55E] hover:bg-[#16a34a] text-black font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.4)] flex items-center gap-2 group"
+                                className="px-10 py-4 bg-secondary hover:bg-[#16a34a] text-black font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.4)] flex items-center gap-2 group"
                             >
                                 CONTACT US
                                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />

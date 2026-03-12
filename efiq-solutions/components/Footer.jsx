@@ -6,11 +6,11 @@ import EfiqLogo from "./EfiqLogo";
 
 const StarburstIcon = () => (
     <div className="relative w-7 h-7 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
-        <div className="absolute w-[22px] h-[22px] bg-[#E87A00] rounded-[1px]" />
-        <div className="absolute w-[22px] h-[22px] bg-[#E87A00] rotate-[30deg] rounded-[1px]" />
-        <div className="absolute w-[22px] h-[22px] bg-[#E87A00] rotate-[60deg] rounded-[1px]" />
+        <div className="absolute w-[22px] h-[22px] bg-tertiary rounded-[1px]" />
+        <div className="absolute w-[22px] h-[22px] bg-tertiary rotate-[30deg] rounded-[1px]" />
+        <div className="absolute w-[22px] h-[22px] bg-tertiary rotate-[60deg] rounded-[1px]" />
         <div className="absolute w-[15px] h-[15px] bg-white rounded-full z-10 flex items-center justify-center drop-shadow-sm">
-            <div className="w-1.5 h-1.5 bg-[#22C55E] rounded-full" />
+            <div className="w-1.5 h-1.5 bg-secondary rounded-full" />
         </div>
     </div>
 );
@@ -47,19 +47,19 @@ function PrivacyPolicyModal({ onClose }) {
                     <p>At EFIQ Solutions, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data.</p>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">1. Overview:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-primary">1. Overview:</h3>
                         <p>At EFIQ Solutions, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">2. Information We Collect:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-primary">2. Information We Collect:</h3>
                         <p><span className="text-white font-semibold">Personal Info:</span> Name, email, phone number, company details, etc., voluntarily provided via forms or direct contact.</p>
                         <p className="mt-2"><span className="text-white font-semibold">Usage Data:</span> Pages visited, IP address, device info, time spent, etc.</p>
                         <p className="mt-2"><span className="text-white font-semibold">Uploaded Content:</span> Temporarily stored content used for preview or project purposes (e.g., videos, documents, or creative assets).</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">3. How We Use Your Information:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-primary">3. How We Use Your Information:</h3>
                         <ul className="list-disc pl-5 space-y-1">
                             <li>To provide and improve our services</li>
                             <li>To contact you regarding inquiries or projects</li>
@@ -69,38 +69,38 @@ function PrivacyPolicyModal({ onClose }) {
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">4. Data Retention:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-primary">4. Data Retention:</h3>
                         <p>We retain user data only for as long as necessary to provide our services. For services like file uploads in contact page/Mocksify, uploaded files are stored temporarily unless explicitly saved.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">5. Cookies:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-primary">5. Cookies:</h3>
                         <p>We may use cookies to enhance user experience and gather analytics. You can modify your browser settings to disable cookies if you prefer.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">6. Sharing of Information:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-primary">6. Sharing of Information:</h3>
                         <p>We do not sell or rent personal data to third parties. Data may be shared with trusted partners for service delivery, bound by confidentiality agreements.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">7. Data Security:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-primary">7. Data Security:</h3>
                         <p>We implement reasonable physical, digital, and managerial procedures to safeguard your data.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">8. Your Rights:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-primary">8. Your Rights:</h3>
                         <p>You have the right to request access, correction, or deletion of your personal data by contacting us.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">9. Updates to Policy:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-primary">9. Updates to Policy:</h3>
                         <p>This Privacy Policy may be updated periodically. Continued use of the site constitutes acceptance of the changes.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">10. Contact:</h3>
-                        <p>If you have questions about this policy, contact us at: <a href="mailto:support@efiqsolutions.com" className="text-[#0A84FF] hover:underline font-medium">support@efiqsolutions.com</a></p>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-primary">10. Contact:</h3>
+                        <p>If you have questions about this policy, contact us at: <a href="mailto:support@efiqsolutions.com" className="text-primary hover:underline font-medium">support@efiqsolutions.com</a></p>
                     </section>
                 </div>
             </div>
@@ -138,47 +138,47 @@ function TermsModal({ onClose }) {
                 {/* Modal Body */}
                 <div className="overflow-y-auto px-8 py-6 space-y-6 text-[13px] leading-relaxed text-[#c8c8c8]" style={{ fontFamily: "'Manrope', sans-serif" }}>
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#22C55E]">1. Introduction:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-secondary">1. Introduction:</h3>
                         <p>Welcome to EFIQ Solutions. By accessing or using our website and services, you agree to be bound by these Terms &amp; Conditions. Please read them carefully before using our platform.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#22C55E]">2. Use of Website:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-secondary">2. Use of Website:</h3>
                         <p>You agree to use the website only for lawful purposes. You must not use the site in any way that causes, or may cause, damage or restrict availability or accessibility of the site.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#22C55E]">3. Services:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-secondary">3. Services:</h3>
                         <p>EFIQ Solutions provides technology services including but not limited to drone development, RC products, digital marketing, software development, and content creation. We reserve the right to modify or discontinue any service at any time without notice.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#22C55E]">4. Intellectual Property:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-secondary">4. Intellectual Property:</h3>
                         <p>All content on this site, including logos, text, graphics, and software, is the property of EFIQ Solutions and protected by applicable copyright and trademark laws. Unauthorized use is prohibited.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#22C55E]">5. User Conduct:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-secondary">5. User Conduct:</h3>
                         <p>You agree not to upload or share any content that is harmful, offensive, or violates any laws. EFIQ Solutions reserves the right to remove any content that breaches these terms.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#22C55E]">6. Third-Party Links:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-secondary">6. Third-Party Links:</h3>
                         <p>Our website may contain links to third-party websites. We are not responsible for the content or privacy practices of such sites.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#22C55E]">7. Limitation of Liability:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-secondary">7. Limitation of Liability:</h3>
                         <p>We are not liable for any damages arising from the use or inability to use this site or our services. All services are provided &quot;as is&quot; without any warranties.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#22C55E]">8. Changes to Terms:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-secondary">8. Changes to Terms:</h3>
                         <p>EFIQ Solutions may update these Terms at any time. Continued use of the website means you accept the revised terms.</p>
                     </section>
 
                     <section>
-                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#22C55E]">9. Governing Law:</h3>
+                        <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-secondary">9. Governing Law:</h3>
                         <p>These Terms are governed by the laws of India. Any disputes will be subject to the exclusive jurisdiction of the courts in Paramakudi, Tamil Nadu.</p>
                     </section>
                 </div>
@@ -248,7 +248,7 @@ export default function Footer() {
                                         <li key={link}>
                                             <Link
                                                 href={link === "About" ? "/about" : link === "Contact" ? "/#contact" : link === "Careers" ? "/career_efiqsolutions" : link === "Newsletter" ? "/newsletter_efiqsolutions" : "#"}
-                                                className="text-white/90 text-sm hover:text-[#22C55E] transition-colors font-medium"
+                                                className="text-white/90 text-sm hover:text-secondary transition-colors font-medium"
                                             >
                                                 {link}
                                             </Link>
@@ -271,13 +271,13 @@ export default function Footer() {
                         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
                             <button
                                 onClick={() => setOpenModal("privacy")}
-                                className="text-white/90 text-xs md:text-sm hover:text-[#0A84FF] transition-colors font-medium underline underline-offset-4 decoration-white/40 hover:decoration-[#0A84FF]"
+                                className="text-white/90 text-xs md:text-sm hover:text-primary transition-colors font-medium underline underline-offset-4 decoration-white/40 hover:decoration-primary"
                             >
                                 Privacy Policy
                             </button>
                             <button
                                 onClick={() => setOpenModal("terms")}
-                                className="text-white/90 text-xs md:text-sm hover:text-[#0A84FF] transition-colors font-medium underline underline-offset-4 decoration-white/40 hover:decoration-[#0A84FF]"
+                                className="text-white/90 text-xs md:text-sm hover:text-primary transition-colors font-medium underline underline-offset-4 decoration-white/40 hover:decoration-primary"
                             >
                                 Terms and Conditions
                             </button>

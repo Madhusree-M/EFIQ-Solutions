@@ -33,7 +33,7 @@ export default function Navbar() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className={`py-3 fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
                 ? "bg-black/80 backdrop-blur-md border-b border-white/5 shadow-2xl"
-                : "bg-transparent"
+                : "bg-black"
                 }`}
         >
 
@@ -53,7 +53,7 @@ export default function Navbar() {
                         onMouseEnter={() => setShowSolutionsMenu(true)}
                         onMouseLeave={() => setShowSolutionsMenu(false)}
                     >
-                        <button className="text-white hover:text-[#22C55E] transition-colors duration-200 tracking-wide flex items-center gap-1 py-4">
+                        <button className="text-white hover:text-secondary transition-colors duration-200 tracking-wide flex items-center gap-1 py-4">
                             Solutions
                             <svg className={`w-4 h-4 transition-transform duration-200 ${showSolutionsMenu ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
@@ -155,7 +155,7 @@ export default function Navbar() {
                             )}
                         </AnimatePresence>
                     </div>
-                    <Link href="#products" className="text-white hover:text-[#22C55E] transition-colors duration-200 tracking-wide">
+                    <Link href="#products" className="text-white hover:text-secondary transition-colors duration-200 tracking-wide">
                         Products
                     </Link>
 
@@ -165,7 +165,7 @@ export default function Navbar() {
                         onMouseEnter={() => setShowCompanyMenu(true)}
                         onMouseLeave={() => setShowCompanyMenu(false)}
                     >
-                        <button className="text-white hover:text-[#22C55E] transition-colors duration-200 tracking-wide flex items-center gap-1 py-4">
+                        <button className="text-white hover:text-secondary transition-colors duration-200 tracking-wide flex items-center gap-1 py-4">
                             Company
                             <svg className={`w-4 h-4 transition-transform duration-200 ${showCompanyMenu ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
@@ -189,7 +189,7 @@ export default function Navbar() {
                         </AnimatePresence>
                     </div>
 
-                    <Link href="#contact" className="text-white hover:text-[#22C55E] transition-colors duration-200 tracking-wide">
+                    <Link href="#contact" className="text-white hover:text-secondary transition-colors duration-200 tracking-wide">
                         Contact
                     </Link>
                     {/* CTA Button */}
@@ -198,7 +198,7 @@ export default function Navbar() {
                             href="https://wa.me/918300380216"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-5 py-2 bg-[#22C55E] hover:bg-[#16a34a] text-black text-md font-bold rounded-md transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] whitespace-nowrap"
+                            className="px-5 py-2 bg-secondary hover:bg-[#16a34a] text-black text-md font-bold rounded-md transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] whitespace-nowrap"
                         >
                             Talk to Expert
                         </a>
@@ -268,7 +268,7 @@ export default function Navbar() {
                                 <Link
                                     href="#contact"
                                     onClick={() => setMenuOpen(false)}
-                                    className="inline-block px-5 py-2 bg-[#22C55E] text-black text-sm font-semibold rounded-md mt-2"
+                                    className="inline-block px-5 py-2 bg-secondary text-black text-sm font-semibold rounded-md mt-2"
                                 >
                                     Get in Touch
                                 </Link>

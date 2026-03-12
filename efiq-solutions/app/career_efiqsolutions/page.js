@@ -8,10 +8,10 @@ import EfiqLogo from "@/components/EfiqLogo";
 
 export default function CareerPage() {
     return (
-        <main className="bg-black min-h-screen text-white selection:bg-[#22C55E]/30" style={{ fontFamily: "'Manrope', sans-serif" }}>
+        <main className="bg-black min-h-screen text-white selection:bg-secondary/30" style={{ fontFamily: "'Manrope', sans-serif" }}>
             <Navbar />
 
-            <div className="pt-32 pb-24 px-6">
+            <div className="pt-24 pb-24 px-6">
                 <div className="max-w-4xl mx-auto">
 
                     {/* Back Button */}
@@ -19,7 +19,7 @@ export default function CareerPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="mb-12"
+                        className="mb-6"
                     >
                         <Link
                             href="/"
@@ -35,7 +35,7 @@ export default function CareerPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-5xl md:text-7xl font-black text-white mb-16 tracking-tight uppercase"
+                        className="text-5xl md:text-7xl font-black text-white mb-10 tracking-tight uppercase"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         CAREERS
@@ -46,13 +46,13 @@ export default function CareerPage() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative rounded-[32px] border border-[#0A84FF]/30 bg-[#16181d]/50 backdrop-blur-xl p-8 md:p-16 overflow-hidden shadow-[0_0_50px_rgba(10,132,255,0.1)]"
+                        className="relative rounded-[32px] border border-gray-700 bg-[#16181d]/50 backdrop-blur-xl p-8 md:p-12 overflow-hidden shadow-[0_0_50px_rgba(10,132,255,0.1)]"
                     >
                         {/* EFIQ Logo in Center (Maybe not needed for careers if mirroring exactly, but screenshot shows a clean layout) */}
                         {/* Screenshot shows "CAREERS" then a box with text */}
 
                         {/* Text Content */}
-                        <div className="space-y-12 text-white/80 leading-relaxed text-base md:text-xl font-medium">
+                        <div className="space-y-12 text-white/80 leading-relaxed text-base md:text-lg font-medium">
                             <p>
                                 We are always interested in connecting with passionate engineers, developers, and creative professionals who want to build meaningful technology and innovative solutions.
                             </p>
@@ -71,7 +71,7 @@ export default function CareerPage() {
 
                             <div className="pt-8">
                                 <p className="text-xl md:text-2xl font-bold text-white">
-                                    Send Your Resume at : <span className="text-[#22C55E]">admin@efiqsolutions.com</span>
+                                    Send Your Resume at : <span className="text-secondary">admin@efiqsolutions.com</span>
                                 </p>
                             </div>
                         </div>

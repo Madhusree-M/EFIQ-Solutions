@@ -2,25 +2,25 @@ import Navbar from "@/components/Navbar";
 
 export default function TermsAndConditions() {
     return (
-        <div className="bg-[#2a2a2c] min-h-screen text-white font-sans selection:bg-[#0A84FF] selection:text-white flex flex-col">
+        <div className="bg-[#2a2a2c] min-h-screen text-white font-sans selection:bg-primary selection:text-white flex flex-col">
             <Navbar />
 
             <main className="flex-1 pt-32 pb-24 px-6 md:px-12">
                 <div className="max-w-6xl mx-auto">
 
                     {/* Header */}
-                    <h1 className="text-3xl md:text-4xl font-bold mb-8 tracking-widest text-[#F1F1F1]" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                    <h1 className="text-4xl md:text-5xl font-black mb-8 tracking-widest text-[#F1F1F1] uppercase" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                         Terms and Conditions
                     </h1>
 
                     {/* Content Box */}
-                    <div className="border border-[#22C55E]/80 rounded-[16px] p-8 md:p-10 lg:p-12 bg-[#333333] shadow-2xl">
+                    <div className="border border-secondary/80 rounded-[16px] p-8 md:p-10 lg:p-12 bg-[#333333] shadow-2xl">
 
-                        <div className="space-y-8 text-[13px] md:text-[14px] leading-relaxed text-[#D1D1D1] pointer-events-none" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                        <div className="space-y-8 text-sm md:text-base leading-relaxed text-[#D1D1D1]" style={{ fontFamily: "'Manrope', sans-serif" }}>
 
                             {/* Section 1 */}
                             <section>
-                                <h2 className="text-[16px] md:text-[18px] font-bold text-white mb-2 underline underline-offset-4 decoration-[1.5px] tracking-wide" style={{ fontFamily: "'Orbitron', sans-serif" }}>1. Introduction:</h2>
+                                <h2 className="text-xl md:text-2xl font-bold uppercase tracking-widest text-white mb-2 underline underline-offset-4 decoration-[1.5px]" style={{ fontFamily: "'Orbitron', sans-serif" }}>1. Introduction:</h2>
                                 <p>
                                     Welcome to EFIQ Solutions. By accessing or using our website and services, you agree to be bound by these Terms & Conditions. Please read them carefully before using our platform.
                                 </p>

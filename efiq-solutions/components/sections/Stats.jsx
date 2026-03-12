@@ -78,7 +78,7 @@ export default function Stats() {
                             >
                                 {stat.label}
                             </h3>
-                            <p className="text-white/80 text-base leading-relaxed pr-4 font-light">
+                            <p className="text-white/80 text-sm leading-relaxed pr-4 font-normal font-manrope">
                                 {stat.desc}
                             </p>
                         </motion.div>

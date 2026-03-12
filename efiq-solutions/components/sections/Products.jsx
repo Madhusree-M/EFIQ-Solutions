@@ -69,12 +69,12 @@ export default function Products() {
                             {/* Content Area */}
                             <div className="p-6 flex-grow flex flex-col">
                                 <h3
-                                    className="text-white font-bold text-xl mb-3 tracking-wide"
+                                    className="text-white font-bold text-xl mb-3 tracking-widest uppercase"
                                     style={{ fontFamily: "'Orbitron', sans-serif" }}
                                 >
                                     {product.name}
                                 </h3>
-                                <p className="text-white/80 text-sm leading-relaxed font-light">
+                                <p className="text-white/80 text-sm md:text-base leading-relaxed font-normal font-manrope">
                                     {product.desc}
                                 </p>
                             </div>

@@ -114,7 +114,7 @@ export default function Testimonials() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-4xl font-bold text-white tracking-widest uppercase"
+                        className="text-4xl md:text-5xl font-bold text-white tracking-widest uppercase"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         <span className="text-white/50 tracking-normal text-2xl md:text-3xl">TRUSTED BY </span>
@@ -177,9 +177,9 @@ export default function Testimonials() {
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: -15 }}
                                             transition={{ duration: 0.3 }}
-                                            className="text-base md:text-xl font-medium leading-[1.4] text-white italic"
+                                            className="text-lg md:text-xl font-medium leading-[1.4] text-white italic"
                                         >
-                                            "{activeTestimonial.quote}"
+                                            &quot;{activeTestimonial.quote}&quot;
                                         </motion.p>
                                     </AnimatePresence>
                                 </div>

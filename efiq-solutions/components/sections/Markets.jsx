@@ -93,7 +93,7 @@ export default function Markets() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl lg:text-5xl font-black text-white uppercase tracking-wider mb-6"
+                        className="text-4xl md:text-5xl font-black text-white uppercase tracking-wider mb-6"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         Markets We Serve
@@ -167,7 +167,7 @@ export default function Markets() {
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <p className="text-xl lg:text-3xl text-white/90 leading-relaxed font-light">
+                                    <p className="text-lg md:text-xl text-white/90 leading-relaxed font-light">
                                         <InteractiveText text={markets[activeIdx].desc} />
                                     </p>
                                 </motion.div>

@@ -6,7 +6,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="relative flex-1 flex flex-col bg-gray-900 w-full"
+            className="relative flex-1 flex flex-col bg-[#161616] w-full overflow-hidden"
         >
             {/* Interstellar Animated Background */}
             {/* <Starfield /> */}
@@ -26,7 +26,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="text-5xl md:text-5xl lg:text-6xl font-bold leading-relaxed text-white mb-6 drop-shadow-lg"
+                        className="text-5xl md:text-7xl font-bold leading-relaxed text-white mb-6 drop-shadow-lg"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         <span className="block mb-3 whitespace-nowrap">Innovative Technology.</span>
@@ -40,7 +40,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        className="font-manrope text-white/70 text-lg md:text-2xl leading-relaxed mb-10 font-light tracking-wide max-w-xl"
+                        className="font-manrope text-white/70 text-lg md:text-xl leading-relaxed mb-10 font-light tracking-wide max-w-xl"
                     >
                         Empowering the future through cutting-edge solutions and transparent innovation
                     </motion.p>
@@ -50,7 +50,7 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.8 }}
                     >
-                        <a href="#contact" className="inline-block px-8 py-4 bg-[#0A84FF] text-white font-bold rounded-full hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(10,132,255,0.4)] hover:shadow-[0_0_30px_rgba(10,132,255,0.6)] transform hover:-translate-y-1">
+                        <a href="#contact" className="inline-block px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(10,132,255,0.4)] hover:shadow-[0_0_30px_rgba(10,132,255,0.6)] transform hover:-translate-y-1">
                             CONTACT NOW
                         </a>
                     </motion.div>
@@ -62,26 +62,20 @@ export default function Hero() {
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className="absolute right-0 bottom-0 w-full lg:w-[65%] h-[75%] flex items-end justify-end z-10 pointer-events-none"
+                className="absolute right-0 bottom-0 w-full lg:w-[65%] h-[85%] flex items-end justify-end z-10 pointer-events-none"
             >
-                <motion.div
+                <div
                     className="relative w-full h-full flex justify-end items-end"
-                    animate={{ y: [0, -15, 0] }}
-                    transition={{
-                        repeat: Infinity,
-                        duration: 6,
-                        ease: "easeInOut"
-                    }}
                 >
                     <img
                         src="/assets/Jet-image.png"
                         alt="Advanced Technology Jet"
-                        className="w-full h-full object-contain object-right-bottom drop-shadow-[0_0_30px_rgba(10,132,255,0.3)] origin-bottom-right scale-125 lg:scale-150 translate-x-10 lg:translate-x-16 translate-y-16"
+                        className="w-full h-full object-contain object-right-bottom drop-shadow-[0_0_30px_rgba(10,132,255,0.3)] origin-bottom-right scale-125 lg:scale-150 translate-x-10 lg:translate-x-16 translate-y-10 lg:translate-y-32"
                     />
 
                     {/* Optional glow behind the jet */}
                     <div className="absolute bottom-[-10%] right-[-10%] w-[70%] h-[70%] bg-[#0A84FF]/20 rounded-full blur-[120px] -z-10" />
-                </motion.div>
+                </div>
             </motion.div>
 
             {/* Bottom fade - Removed to eliminate gap */}

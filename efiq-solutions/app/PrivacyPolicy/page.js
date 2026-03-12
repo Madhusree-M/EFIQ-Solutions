@@ -2,25 +2,25 @@ import Navbar from "@/components/Navbar";
 
 export default function PrivacyPolicy() {
     return (
-        <div className="bg-[#222222] min-h-screen text-white font-sans selection:bg-[#0A84FF] selection:text-white flex flex-col">
+        <div className="bg-[#222222] min-h-screen text-white font-sans selection:bg-primary selection:text-white flex flex-col">
             <Navbar />
 
             <main className="flex-1 pt-32 pb-24 px-6 md:px-12">
                 <div className="max-w-6xl mx-auto">
 
                     {/* Header */}
-                    <h1 className="text-3xl md:text-4xl font-bold mb-8 tracking-widest text-[#F1F1F1]" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                    <h1 className="text-4xl md:text-5xl font-black mb-8 tracking-widest text-[#F1F1F1] uppercase" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                         Privacy Policy
                     </h1>
 
                     {/* Content Box */}
-                    <div className="border border-[#22C55E]/60 rounded-[16px] p-8 md:p-10 lg:p-12 bg-[#2d2d2d] shadow-2xl">
+                    <div className="border border-secondary/60 rounded-[16px] p-8 md:p-10 lg:p-12 bg-[#2d2d2d] shadow-2xl">
 
-                        <div className="space-y-8 text-[13px] md:text-[14px] leading-relaxed text-[#D1D1D1] pointer-events-none" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                        <div className="space-y-8 text-sm md:text-base leading-relaxed text-[#D1D1D1]" style={{ fontFamily: "'Manrope', sans-serif" }}>
 
                             {/* Section 1 */}
                             <section>
-                                <h2 className="text-[16px] md:text-[18px] font-bold text-white mb-2 underline underline-offset-4 decoration-[1.5px] tracking-wide" style={{ fontFamily: "'Orbitron', sans-serif" }}>1. Overview:</h2>
+                                <h2 className="text-xl md:text-2xl font-bold uppercase tracking-widest text-white mb-2 underline underline-offset-4 decoration-[1.5px]" style={{ fontFamily: "'Orbitron', sans-serif" }}>1. Overview:</h2>
                                 <p>
                                     At EFIQ Solutions, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data.
                                 </p>
@@ -105,7 +105,7 @@ export default function PrivacyPolicy() {
                             <section>
                                 <h2 className="text-[16px] md:text-[18px] font-bold text-white mb-2 underline underline-offset-4 decoration-[1.5px] tracking-wide" style={{ fontFamily: "'Orbitron', sans-serif" }}>10. Contact:</h2>
                                 <p>
-                                    If you have questions about this policy, contact us at: <a href="mailto:support@efiqsolutions.com" className="text-[#0A84FF] hover:underline pointer-events-auto font-medium tracking-wide">support@efiqsolutions.com</a>
+                                    If you have questions about this policy, contact us at: <a href="mailto:support@efiqsolutions.com" className="text-primary hover:underline pointer-events-auto font-medium tracking-wide">support@efiqsolutions.com</a>
                                 </p>
                             </section>
 

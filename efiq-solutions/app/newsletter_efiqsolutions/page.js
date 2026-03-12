@@ -7,10 +7,10 @@ import Footer from "@/components/Footer";
 
 export default function NewsletterPage() {
     return (
-        <main className="bg-black min-h-screen text-white selection:bg-[#22C55E]/30" style={{ fontFamily: "'Manrope', sans-serif" }}>
+        <main className="bg-black min-h-screen text-white selection:bg-secondary/30" style={{ fontFamily: "'Manrope', sans-serif" }}>
             <Navbar />
 
-            <div className="pt-32 pb-24 px-6">
+            <div className="pt-24 pb-24 px-6">
                 <div className="max-w-4xl mx-auto">
 
                     {/* Back Button */}
@@ -18,7 +18,7 @@ export default function NewsletterPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="mb-12"
+                        className="mb-6"
                     >
                         <Link
                             href="/"
@@ -34,7 +34,7 @@ export default function NewsletterPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-5xl md:text-7xl font-black text-white mb-16 tracking-tight uppercase"
+                        className="text-5xl md:text-7xl font-black text-white mb-10 tracking-tight uppercase"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         NEWSLETTER
@@ -45,7 +45,7 @@ export default function NewsletterPage() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative rounded-[32px] border border-[#0A84FF]/30 bg-[#16181d]/50 backdrop-blur-xl p-8 md:p-16 overflow-hidden shadow-[0_0_50px_rgba(10,132,255,0.1)]"
+                        className="relative rounded-[32px] border border-gray-700 bg-[#16181d]/50 backdrop-blur-xl p-8 md:p-12 overflow-hidden shadow-[0_0_50px_rgba(10,132,255,0.1)]"
                     >
                         {/* Newsletter Content */}
                         <div className="space-y-12">
@@ -53,7 +53,7 @@ export default function NewsletterPage() {
                                 <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
                                     Stay Updated with EFIQ
                                 </h2>
-                                <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl font-medium">
+                                <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl font-medium">
                                     Subscribe to receive occasional updates about our latest projects, technology developments, and innovations.
                                 </p>
                             </div>
@@ -69,7 +69,7 @@ export default function NewsletterPage() {
                                             type="email"
                                             id="email"
                                             placeholder="Enter your email id"
-                                            className="w-full bg-black/40 border border-[#0A84FF]/30 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-[#22C55E]/50 focus:ring-1 focus:ring-[#22C55E]/20 transition-all duration-300"
+                                            className="w-full bg-black/40  border border-gray-700 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-secondary/50 focus:ring-1 focus:ring-secondary/20 transition-all duration-300"
                                         />
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@ export default function NewsletterPage() {
                                 <div className="flex justify-center md:justify-start pt-4">
                                     <button
                                         type="submit"
-                                        className="px-12 py-4 bg-[#22C55E] hover:bg-[#16a34a] text-black font-black text-xl rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.4)] flex items-center justify-center min-w-[200px]"
+                                        className="px-12 py-4 bg-secondary hover:bg-[#16a34a] text-black font-black text-xl rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.4)] flex items-center justify-center min-w-[200px]"
                                     >
                                         Subscribe
                                     </button>
