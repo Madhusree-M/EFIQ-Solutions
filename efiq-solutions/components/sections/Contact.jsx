@@ -193,10 +193,10 @@ export default function Contact() {
 
                         <div className="space-y-6">
                             {[
-                                { icon: FiMail, label: "For General Inquiry", value: "hello@efiqsolutions.com", color: "#0A84FF" },
-                                { icon: FiMail, label: "For Support", value: "support@efiqsolutions.com", color: "#0A84FF" },
-                                { icon: FiPhone, label: "Call Us", value: "+91 83003 80216", color: "#22C55E" },
-                                { icon: FiMapPin, label: "Hub Location", value: "7/210 - 1, Yellow City, Paramakudi. Tamil Nadu, 623701.", color: "#0A84FF" },
+                                { icon: FiMail, label: "For General Inquiry", value: "hello@efiqsolutions.com", color: "#0A84FF", href: "https://mail.google.com/mail/?view=cm&fs=1&to=hello@efiqsolutions.com" },
+                                { icon: FiMail, label: "For Support", value: "support@efiqsolutions.com", color: "#0A84FF", href: "https://mail.google.com/mail/?view=cm&fs=1&to=support@efiqsolutions.com" },
+                                { icon: FiPhone, label: "Call Us", value: "+91 83003 80216", color: "#22C55E", href: "tel:+918300380216" },
+                                { icon: FiMapPin, label: "Hub Location", value: "7/210 - 1, Yellow City, Paramakudi. Tamil Nadu, 623701.", color: "#0A84FF", href: "https://www.google.com/maps/search/?api=1&query=7/210-1,+Yellow+City,+Paramakudi,+Tamil+Nadu+623701" },
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
@@ -206,10 +206,15 @@ export default function Contact() {
                                     <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#0A84FF]/40 transition-all duration-300">
                                         <item.icon size={20} className="text-white group-hover:text-[#0A84FF] transition-colors" />
                                     </div>
-                                    <div className="pt-1">
+                                    <a 
+                                        href={item.href}
+                                        target={item.href.startsWith('http') ? "_blank" : undefined}
+                                        rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                                        className="pt-1 block focus:outline-none"
+                                    >
                                         <div className="text-white/30 text-[10px] uppercase tracking-widest font-bold mb-1">{item.label}</div>
                                         <div className="text-white font-medium group-hover:text-[#0A84FF] transition-colors">{item.value}</div>
-                                    </div>
+                                    </a>
                                 </motion.div>
                             ))}
                         </div>
