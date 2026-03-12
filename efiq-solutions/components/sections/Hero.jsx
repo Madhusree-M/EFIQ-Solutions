@@ -29,13 +29,11 @@ export default function Hero() {
                         className="text-5xl md:text-5xl lg:text-6xl font-bold leading-relaxed text-white mb-6 drop-shadow-lg"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
-                        <span className="whitespace-nowrap">Innovative Technology.</span>
-                        <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#0A84FF] whitespace-nowrap">
+                        <span className="block mb-3 whitespace-nowrap">Innovative Technology.</span>
+                        <span className="block mb-3 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#0A84FF] whitespace-nowrap">
                             Tangible Results.
                         </span>
-                        <br />
-                        <span className="whitespace-nowrap">Real Impact.</span>
+                        <span className="block whitespace-nowrap">Real Impact.</span>
                     </motion.h1>
 
                     <motion.p

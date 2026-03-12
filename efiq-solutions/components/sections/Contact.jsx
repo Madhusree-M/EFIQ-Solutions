@@ -6,28 +6,46 @@ import { useState } from "react";
 export default function Contact() {
     const [form, setForm] = useState({ name: "", email: "", company: "", phone: "", message: "" });
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
+        setError(false);
 
-        // Construct the WhatsApp message
-        const message = `Name: ${form.name}
-Email: ${form.email}
-Company: ${form.company}
-Phone: ${form.phone}
-Message: ${form.message}`;
+        try {
+            const res = await fetch("https://formsubmit.co/ajax/hello@efiqsolutions.com", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    name: form.name,
+                    email: form.email,
+                    company: form.company,
+                    phone: form.phone,
+                    message: form.message,
+                    _subject: `Contact Inquiry from ${form.name}`,
+                    _captcha: "false",
+                }),
+            });
 
-        // Encode message for URL
-        const encodedMessage = encodeURIComponent(message);
-
-        // WhatsApp URL
-        const whatsappUrl = `https://wa.me/918300380216?text=${encodedMessage}`;
-
-        // Open WhatsApp in a new window
-        window.open(whatsappUrl, '_blank');
-
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 3000);
+            if (res.ok) {
+                setSubmitted(true);
+                setForm({ name: "", email: "", company: "", phone: "", message: "" });
+                setTimeout(() => setSubmitted(false), 4000);
+            } else {
+                setError(true);
+                setTimeout(() => setError(false), 4000);
+            }
+        } catch {
+            setError(true);
+            setTimeout(() => setError(false), 4000);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -247,14 +265,19 @@ Message: ${form.message}`;
 
                                     <motion.button
                                         type="submit"
-                                        whileHover={{ scale: 1.01 }}
-                                        whileTap={{ scale: 0.99 }}
-                                        className="relative w-full overflow-hidden group/btn bg-white text-black font-black py-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300"
+                                        disabled={loading}
+                                        whileHover={{ scale: loading ? 1 : 1.01 }}
+                                        whileTap={{ scale: loading ? 1 : 0.99 }}
+                                        className="relative w-full overflow-hidden group/btn bg-white text-black font-black py-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
                                     >
                                         <div className="absolute inset-0 bg-[#0A84FF] translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300" />
                                         <span className="relative z-10 group-hover/btn:text-white transition-colors flex items-center gap-2">
                                             {submitted ? (
-                                                <>Mission Received ✓</>
+                                                <>Sent successfully</>
+                                            ) : error ? (
+                                                <>Failed – Try Again</>
+                                            ) : loading ? (
+                                                <>Sending…</>
                                             ) : (
                                                 <>
                                                     <FiSend size={18} />
