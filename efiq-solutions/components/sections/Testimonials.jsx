@@ -117,8 +117,8 @@ export default function Testimonials() {
                         className="text-4xl md:text-5xl font-bold text-white tracking-widest uppercase"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
-                        <span className="text-white/50 tracking-normal text-2xl md:text-3xl">TRUSTED BY </span>
-                        <br />THE MOST INNOVATIVE TEAMS
+                        <span className="text-white/50 text-2xl md:text-3xl">TRUSTED BY </span>
+                        <br />THE MOST INNOVATIVE FIRMS
                     </motion.h2>
                 </div>
 
@@ -153,7 +153,7 @@ export default function Testimonials() {
                             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"></div>
 
                             {/* Large Logo Top Left */}
-                            <div className="absolute top-0 left-0 z-20">
+                                <div className="absolute -top-10 -left-24 z-20">
                                 <AnimatePresence mode="wait">
                                     <motion.div
                                         key={activeTestimonial.id}

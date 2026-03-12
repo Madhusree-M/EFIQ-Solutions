@@ -21,7 +21,7 @@ export default function Hero() {
             <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-6 flex items-center justify-start">
 
                 {/* Left Side: Text Content */}
-                <div className="leading-1 w-full lg:w-1/2 text-left z-20 flex flex-col justify-center pt-20 lg:pt-32 pb-10 lg:pb-0">
+                <div className="leading-1 w-full lg:w-1/2 text-left z-20 flex flex-col justify-center pt-24 lg:pt-40 pb-16 lg:pb-20">
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -30,8 +30,8 @@ export default function Hero() {
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         <span className="block mb-3 whitespace-nowrap">Innovative Technology.</span>
-                        <span className="block mb-3 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#0A84FF] whitespace-nowrap">
-                            Tangible Results.
+                        <span className="inline-block mb-3 pr-12 pb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#0A84FF] whitespace-nowrap">
+                            Tangible Results.&nbsp;
                         </span>
                         <span className="block whitespace-nowrap">Real Impact.</span>
                     </motion.h1>
@@ -40,7 +40,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        className="font-manrope text-white/70 text-lg md:text-xl leading-relaxed mb-10 font-light tracking-wide max-w-xl"
+                        className="font-manrope text-white/70 text-lg md:text-xl leading-relaxed mb-10 font-light max-w-xl"
                     >
                         Empowering the future through cutting-edge solutions and transparent innovation
                     </motion.p>

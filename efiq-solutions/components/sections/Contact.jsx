@@ -193,8 +193,8 @@ export default function Contact() {
 
                         <div className="space-y-6">
                             {[
-                                { icon: FiMail, label: "For General Inquiry", value: "hello@efiqsolutions.com", color: "#0A84FF", href: "https://mail.google.com/mail/?view=cm&fs=1&to=hello@efiqsolutions.com" },
-                                { icon: FiMail, label: "For Support", value: "support@efiqsolutions.com", color: "#0A84FF", href: "https://mail.google.com/mail/?view=cm&fs=1&to=support@efiqsolutions.com" },
+                                { icon: FiMail, label: "For General Inquiry", value: "hello@efiqsolutions.com", color: "#0A84FF", href: "mailto:hello@efiqsolutions.com" },
+                                { icon: FiMail, label: "For Support", value: "support@efiqsolutions.com", color: "#0A84FF", href: "mailto:support@efiqsolutions.com" },
                                 { icon: FiPhone, label: "Call Us", value: "+91 83003 80216", color: "#22C55E", href: "tel:+918300380216" },
                                 { icon: FiMapPin, label: "Hub Location", value: "7/210 - 1, Yellow City, Paramakudi. Tamil Nadu, 623701.", color: "#0A84FF", href: "https://www.google.com/maps/search/?api=1&query=7/210-1,+Yellow+City,+Paramakudi,+Tamil+Nadu+623701" },
                             ].map((item, i) => (

@@ -97,7 +97,7 @@ function PrivacyPolicyModal({ onClose }) {
 
                     <section>
                         <h3 className="text-white font-bold text-sm mb-2 pl-3 border-l-2 border-[#0A84FF]">10. Contact:</h3>
-                        <p>If you have questions about this policy, contact us at: <a href="mailto:support@efiqsolutions.com" className="text-primary hover:underline font-medium">support@efiqsolutions.com</a></p>
+                        <p>If you have questions about this policy, contact us at: <a href="mailto:hello@efiqsolutions.com" className="text-primary hover:underline font-medium">support@efiqsolutions.com</a></p>
                     </section>
                 </div>
             </div>

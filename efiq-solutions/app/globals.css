@@ -17,6 +17,7 @@ html {
 body {
   background-color: #000000;
   color: #FFFFFF;
+  letter-spacing: 0.06em;
 }
 
 @keyframes shadow724 {

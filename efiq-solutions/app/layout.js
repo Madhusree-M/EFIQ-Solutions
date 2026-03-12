@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
                     rel="stylesheet"
                 />
             </head>
-            <body className="bg-black text-white antialiased" style={{ fontFamily: "'Manrope', sans-serif" }}>
+            <body className="bg-black text-white antialiased" style={{ fontFamily: "'Manrope', sans-serif", letterSpacing: '0.08em' }}>
                 <Loader />
                 <JellyfishCursor />
                 {children}

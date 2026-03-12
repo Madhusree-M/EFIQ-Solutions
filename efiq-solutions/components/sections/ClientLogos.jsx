@@ -54,8 +54,8 @@ export default function ClientLogos() {
 
     return (
         <section className="bg-black border-b border-white/5 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-">
-                <p className="text-center text-white/30 text-xs uppercase tracking-widest py-4">
+            <div className="max-w-7xl mx-auto px-6">
+                <p className="text-center text-white/30 text-[13px] uppercase tracking-widest pt-7 pb-2">
                     We are proud to work with
                 </p>
                 <div className="relative">
@@ -73,7 +73,7 @@ export default function ClientLogos() {
                                 x: {
                                     repeat: Infinity,
                                     repeatType: "loop",
-                                    duration: logos.length * 2, // 2s per logo for a smooth but rhythmic feel
+                                    duration: logos.length * 6, // Slower movement
                                     ease: "linear",
                                 },
                             }}
@@ -89,7 +89,7 @@ export default function ClientLogos() {
                                     <img
                                         src={logo.src}
                                         alt={logo.name}
-                                        className={`h-26 md:h-50 w-auto object-contain transition-all duration-300 opacity-60 filter grayscale scale-100 hover:opacity-100 hover:filter-none hover:scale-110`}
+                                        className={`h-16 md:h-36 w-auto object-contain transition-all duration-300 opacity-60 filter grayscale scale-100 hover:opacity-100 hover:filter-none hover:scale-110`}
                                     />
                                 </motion.div>
                             ))}
