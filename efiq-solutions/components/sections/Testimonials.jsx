@@ -16,8 +16,8 @@ const testimonials = [
             </div>
         ),
         largeLogo: () => (
-            <div className="relative h-40 md:h-64 w-80 md:w-[450px]">
-                <Image src="/assets/Company-Logos/Hifi Hydrodip.png" alt="Hifi Hydrodip" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 320px, 450px" />
+            <div className="relative h-28 md:h-64 w-64 md:w-[450px]">
+                <Image src="/assets/Company-Logos/Hifi Hydrodip.png" alt="Hifi Hydrodip" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 256px, 450px" />
             </div>
         )
     },
@@ -32,8 +32,8 @@ const testimonials = [
             </div>
         ),
         largeLogo: () => (
-            <div className="relative h-40 md:h-64 w-80 md:w-[450px]">
-                <Image src="/assets/Company-Logos/Milar.png" alt="Milar" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 320px, 450px" />
+            <div className="relative h-28 md:h-64 w-64 md:w-[450px]">
+                <Image src="/assets/Company-Logos/Milar.png" alt="Milar" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 256px, 450px" />
             </div>
         )
     },
@@ -48,8 +48,8 @@ const testimonials = [
             </div>
         ),
         largeLogo: () => (
-            <div className="relative h-40 md:h-64 w-80 md:w-[450px]">
-                <Image src="/assets/Company-Logos/Trinitas.png" alt="Trinitas" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 320px, 450px" />
+            <div className="relative h-28 md:h-64 w-64 md:w-[450px]">
+                <Image src="/assets/Company-Logos/Trinitas.png" alt="Trinitas" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 256px, 450px" />
             </div>
         )
     },
@@ -64,8 +64,8 @@ const testimonials = [
             </div>
         ),
         largeLogo: () => (
-            <div className="relative h-40 md:h-64 w-80 md:w-[450px]">
-                <Image src="/assets/Company-Logos/Buzzkins.png" alt="Buzzkins" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 320px, 450px" />
+            <div className="relative h-28 md:h-64 w-64 md:w-[450px]">
+                <Image src="/assets/Company-Logos/Buzzkins.png" alt="Buzzkins" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 256px, 450px" />
             </div>
         )
     },
@@ -80,8 +80,8 @@ const testimonials = [
             </div>
         ),
         largeLogo: () => (
-            <div className="relative h-40 md:h-64 w-80 md:w-[450px]">
-                <Image src="/assets/Company-Logos/Astredge.png" alt="Astredge" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 320px, 450px" />
+            <div className="relative h-28 md:h-64 w-64 md:w-[450px]">
+                <Image src="/assets/Company-Logos/Astredge.png" alt="Astredge" fill className="object-contain brightness-0 invert drop-shadow-2xl" sizes="(max-width: 768px) 256px, 450px" />
             </div>
         )
     }
@@ -114,10 +114,10 @@ export default function Testimonials() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-bold text-white tracking-widest uppercase"
+                        className="text-2xl md:text-5xl font-bold text-white tracking-widest uppercase"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
-                        <span className="text-white/50 text-2xl md:text-3xl">TRUSTED BY </span>
+                        <span className="text-white/50 text-base md:text-3xl">TRUSTED BY </span>
                         <br />THE MOST INNOVATIVE FIRMS
                     </motion.h2>
                 </div>
@@ -153,7 +153,7 @@ export default function Testimonials() {
                             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"></div>
 
                             {/* Large Logo Top Left */}
-                                <div className="absolute -top-10 -left-24 z-20">
+                                <div className="absolute -top-5 md:-top-10 -left-12 md:-left-24 z-20">
                                 <AnimatePresence mode="wait">
                                     <motion.div
                                         key={activeTestimonial.id}
@@ -169,7 +169,7 @@ export default function Testimonials() {
 
                             {/* Quote container */}
                             <div className="relative z-20 w-full mt-20 md:mt-24">
-                                <div className="w-full max-w-[90%] md:max-w-[85%] pr-10 pb-2">
+                                <div className="w-full md:max-w-[85%] pr-2 md:pr-10 pb-2">
                                     <AnimatePresence mode="wait">
                                         <motion.p
                                             key={activeTestimonial.id}
@@ -177,7 +177,7 @@ export default function Testimonials() {
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: -15 }}
                                             transition={{ duration: 0.3 }}
-                                            className="text-lg md:text-xl font-medium leading-[1.4] text-white italic"
+                                            className="text-[13px] md:text-xl font-medium leading-[1.5] text-white italic"
                                         >
                                             &quot;{activeTestimonial.quote}&quot;
                                         </motion.p>
@@ -193,7 +193,7 @@ export default function Testimonials() {
                                     key={t.id}
                                     onClick={() => setActiveId(t.id)}
                                     className={`
-                                    flex items-center justify-center px-4 py-2 rounded-lg transition-all duration-300 flex-1 min-w-[120px]
+                                    flex items-center justify-center px-4 py-2 rounded-lg transition-all duration-300 flex-1 min-w-[90px] md:min-w-[120px]
                                     ${activeId === t.id
                                             ? 'bg-black text-white shadow-inner border border-white/10'
                                             : 'bg-transparent text-white/40 hover:text-white hover:bg-white/5'}
