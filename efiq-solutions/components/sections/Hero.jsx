@@ -20,7 +20,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="font-bold leading-[1.12] text-white mb-3 sm:mb-4 lg:mb-6 drop-shadow-lg"
+                        className="flex flex-col gap-2 md:gap-0 font-bold leading-[1.12] text-white mb-5 sm:mb-4 lg:mb-6 drop-shadow-lg"
                         style={{
                             fontFamily: "'Orbitron', sans-serif",
                             fontSize: "clamp(1.25rem, 5vw, 4.5rem)",
@@ -37,7 +37,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        className="font-manrope text-white/70 text-xs sm:text-sm md:text-base lg:text-xl leading-relaxed mb-4 sm:mb-6 lg:mb-10 font-light max-w-xl"
+                        className="font-manrope text-white/70 text-xs sm:text-sm md:text-base lg:text-xl leading-relaxed mb-6 sm:mb-6 lg:mb-10 font-light max-w-xl"
                     >
                         Empowering the future through cutting-edge solutions and transparent innovation
                     </motion.p>
@@ -61,7 +61,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className="absolute bottom-0 inset-x-0 lg:inset-x-auto lg:right-0 w-full sm:w-[80%] md:w-[65%] lg:w-[60%] h-[55%] sm:h-[55%] lg:h-[80%] mx-auto lg:mx-0 flex items-end justify-center lg:justify-end z-10 pointer-events-none"
+                className="absolute bottom-0 inset-x-0 lg:inset-x-auto lg:right-[6%] w-full sm:w-[80%] md:w-[65%] lg:w-[60%] h-[60%] sm:h-[55%] lg:h-[85%] mx-auto lg:mx-0 flex items-end justify-center lg:justify-end z-10 pointer-events-none"
             >
                 <div className="relative w-full h-full flex justify-center lg:justify-end items-end">
                     <img
