@@ -15,7 +15,7 @@ export default function Home() {
         <>
             <Navbar />
             <main>
-                <div className="min-h-screen flex flex-col overflow-x-hidden">
+                <div className="h-[100dvh] min-h-[600px] flex flex-col overflow-hidden relative">
                     <Hero />
                     <ClientLogos />
                 </div>
