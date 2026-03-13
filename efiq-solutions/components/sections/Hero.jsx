@@ -62,7 +62,7 @@ export default function Hero() {
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className="absolute right-0 bottom-0 w-full lg:w-[65%] h-[85%] flex items-end justify-end z-10 pointer-events-none"
+                className="absolute right-0 bottom-0 w-full lg:w-[65%] h-[80%] flex items-end justify-end z-10 pointer-events-none"
             >
                 <div
                     className="relative w-full h-full flex justify-end items-end"
