@@ -21,26 +21,26 @@ export default function Hero() {
             <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-6 flex items-center justify-start">
 
                 {/* Left Side: Text Content */}
-                <div className="leading-1 w-full lg:w-1/2 text-left z-20 flex flex-col justify-center pt-16 lg:pt-40 pb-4 lg:pb-20">
+                <div className="leading-1 w-full lg:w-1/2 text-left z-20 flex flex-col justify-center pt-24 lg:pt-40 pb-16 lg:pb-20">
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="text-2xl md:text-7xl font-bold leading-tight md:leading-relaxed text-white mb-2 md:mb-6 drop-shadow-lg"
+                        className="text-5xl md:text-7xl font-bold leading-relaxed text-white mb-6 drop-shadow-lg"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
-                        <span className="block mb-0 md:mb-3 md:whitespace-nowrap">Innovative Technology.</span>
-                        <span className="inline-block mb-0 md:mb-3 pr-4 md:pr-12 pb-1 md:pb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#0A84FF] md:whitespace-nowrap">
+                        <span className="block mb-3 whitespace-nowrap">Innovative Technology.</span>
+                        <span className="inline-block mb-3 pr-12 pb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#0A84FF] whitespace-nowrap">
                             Tangible Results.&nbsp;
                         </span>
-                        <span className="block md:whitespace-nowrap">Real Impact.</span>
+                        <span className="block whitespace-nowrap">Real Impact.</span>
                     </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        className="font-manrope text-white/70 text-sm md:text-xl leading-relaxed mb-3 md:mb-10 font-light max-w-xl"
+                        className="font-manrope text-white/70 text-lg md:text-xl leading-relaxed mb-10 font-light max-w-xl"
                     >
                         Empowering the future through cutting-edge solutions and transparent innovation
                     </motion.p>
@@ -50,7 +50,7 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.8 }}
                     >
-                        <a href="#contact" className="inline-block px-6 md:px-8 py-3 md:py-4 text-sm md:text-base bg-primary text-white font-bold rounded-full hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(10,132,255,0.4)] hover:shadow-[0_0_30px_rgba(10,132,255,0.6)] transform hover:-translate-y-1">
+                        <a href="#contact" className="inline-block px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(10,132,255,0.4)] hover:shadow-[0_0_30px_rgba(10,132,255,0.6)] transform hover:-translate-y-1">
                             CONTACT NOW
                         </a>
                     </motion.div>
@@ -62,7 +62,7 @@ export default function Hero() {
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className="absolute right-0 bottom-0 w-full lg:w-[65%] h-[55%] md:h-[80%] flex items-end justify-end z-10 pointer-events-none"
+                className="absolute right-0 bottom-0 w-full lg:w-[65%] h-[80%] flex items-end justify-end z-10 pointer-events-none"
             >
                 <div
                     className="relative w-full h-full flex justify-end items-end"
@@ -70,7 +70,7 @@ export default function Hero() {
                     <img
                         src="/assets/Jet-image.png"
                         alt="Advanced Technology Jet"
-                        className="w-full h-full object-contain object-right-bottom drop-shadow-[0_0_30px_rgba(10,132,255,0.3)] origin-bottom-right scale-110 md:scale-125 lg:scale-150 translate-x-6 md:translate-x-10 lg:translate-x-16 translate-y-16 md:translate-y-10 lg:translate-y-32"
+                        className="w-full h-full object-contain object-right-bottom drop-shadow-[0_0_30px_rgba(10,132,255,0.3)] origin-bottom-right scale-125 lg:scale-150 translate-x-10 lg:translate-x-16 translate-y-10 lg:translate-y-32"
                     />
 
                     {/* Optional glow behind the jet */}
