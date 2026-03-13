@@ -53,9 +53,9 @@ export default function ClientLogos() {
     }, [centerIndex]);
 
     return (
-        <section className="bg-black h-40 border-b border-white/5 overflow-hidden">
+        <section className="bg-black h-20 md:h-40 border-b border-white/5 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
-                <p className="text-center text-white/30 text-[13px] uppercase tracking-widest pt-7 pb-8">
+                <p className="text-center text-white/30 text-[11px] md:text-[13px] uppercase tracking-widest pt-2 md:pt-7 pb-1 md:pb-8">
                     We are proud to work with
                 </p>
                 <div className="relative">
@@ -84,12 +84,12 @@ export default function ClientLogos() {
                                     key={i}
                                     ref={el => itemRefs.current[i] = el}
                                     whileHover={{ scale: 1.05 }}
-                                    className="group flex items-center justify-center px-4 md:px-6 transition-all duration-300 cursor-pointer min-w-[180px] md:min-w-[240px] h-20"
+                                    className="group flex items-center justify-center px-4 md:px-6 transition-all duration-300 cursor-pointer min-w-[140px] md:min-w-[240px] h-10 md:h-20"
                                 >
                                     <img
                                         src={logo.src}
                                         alt={logo.name}
-                                        className={`py-0 h-24 md:h-36 w-auto object-contain transition-all duration-300 opacity-60 filter grayscale scale-100 hover:opacity-100 hover:filter-none hover:scale-110`}
+                                        className={`py-0 h-12 md:h-36 w-auto object-contain transition-all duration-300 opacity-60 filter grayscale scale-100 hover:opacity-100 hover:filter-none hover:scale-110`}
                                     />
                                 </motion.div>
                             ))}
