@@ -167,7 +167,7 @@ export default function Contact() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight"
+                        className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         DESIGNING THE<br />

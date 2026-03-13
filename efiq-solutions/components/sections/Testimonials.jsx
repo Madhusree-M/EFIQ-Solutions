@@ -114,7 +114,7 @@ export default function Testimonials() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-2xl md:text-5xl font-bold text-white tracking-widest uppercase"
+                        className="text-xl md:text-5xl font-bold text-white tracking-widest uppercase"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         <span className="text-white/50 text-base md:text-3xl">TRUSTED BY </span>

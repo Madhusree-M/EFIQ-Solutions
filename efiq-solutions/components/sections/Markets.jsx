@@ -93,7 +93,7 @@ export default function Markets() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl font-black text-white uppercase tracking-wider mb-6"
+                        className="text-3xl md:text-5xl font-black text-white uppercase tracking-wider mb-6"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         Markets We Serve

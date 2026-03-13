@@ -56,7 +56,7 @@ export default function Navbar() {
                 : "bg-black"
                 }`}
         >
-            <div className="flex justify-between items-center w-full px-6 md:px-12 lg:px-20 py-2">
+            <div className="flex justify-between items-center w-full max-w-7xl mx-auto px-6 py-2">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group z-50" onClick={closeMenu}>
                     <div className="w-24 md:w-32 h-10 md:h-12 flex items-center justify-center">

@@ -41,7 +41,7 @@ export default function Stats() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-black text-white uppercase tracking-wider"
+                        className="text-3xl md:text-5xl font-black text-white uppercase tracking-wider"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         WHY CHOOSE US?
@@ -68,7 +68,7 @@ export default function Stats() {
                             </div>
 
                             <div
-                                className="text-6xl md:text-7xl font-black text-white mb-6 tracking-tighter hover:text-[#0A84FF] scale-105 transition-all duration-300 cursor-default"
+                                className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter hover:text-[#0A84FF] scale-105 transition-all duration-300 cursor-default"
                             >
                                 <AnimatedNumber value={stat.number} suffix={stat.suffix} />
                             </div>

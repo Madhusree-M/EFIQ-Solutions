@@ -4,12 +4,12 @@ export default function FinalCTA() {
     return (
         <section className="py-24 bg-black flex justify-center items-center">
             {/* The main card container */}
-            <div className="w-full max-w-5xl mx-auto px-6">
+            <div className="w-full max-w-7xl mx-auto px-6">
                 <div className="bg-[#121212] rounded-2xl py-16 px-8 md:px-16 flex flex-col items-center text-center">
 
                     {/* Header */}
                     <h2
-                        className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-wide"
+                        className="text-2xl md:text-5xl font-bold text-white mb-6 tracking-wide"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         Ready to Transform your Business?

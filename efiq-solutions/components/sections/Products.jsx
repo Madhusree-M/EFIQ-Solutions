@@ -37,7 +37,7 @@ export default function Products() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-bold text-white tracking-widest uppercase"
+                        className="text-3xl md:text-5xl font-bold text-white tracking-widest uppercase"
                         style={{ fontFamily: "'Orbitron', sans-serif" }}
                     >
                         Products
